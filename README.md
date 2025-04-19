@@ -2,8 +2,6 @@
 
 Welcome to my GitHub profile! I'm Milan, a passionate Full Stack Developer with 1 year of experience. I love building modern web applications and continuously learning new technologies.
 
-#### 🔗 **GitHub**: [MokariyaMilanDev](https://github.com/MokariyaMilanDev)
-
 #### 🔗 **Linkedin**: [MokariyaMilanDev](https://www.linkedin.com/in/mokariya-milan-dev)
 
 ---
