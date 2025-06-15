@@ -90,4 +90,4 @@ Welcome to my GitHub profile! I'm Milan, a passionate Full Stack Developer with 
 
 ## 🎉 Fun Fact
 
-I love to contribute to open-source projects and collaborate with developers around the world. Let's build something awesome together! 😎
+I love projects and collaborate with developers around the world. Let's build something awesome together! 😎
