@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found | Milan Mokariya</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <div class="nav-content">
+          <h2>
+            <a href="#" class="logo">.dev</a>
+          </h2>
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="floating-shapes">
+          <div class="shape"></div>
+          <div class="shape"></div>
+          <div class="shape"></div>
+        </div>
+
+        <div class="error-container">
+          <div class="error-visual">
+            <i class="fas fa-ban"></i>
+          </div>
+          <div class="error-message">Oops! 404 Page Not Found</div>
+          <div class="error-description">
+            The page you're looking for seems to have wandered off into the
+            digital void. Don't worry, it happens to the best of us!
+          </div>
+
+          <a href="/" class="btn btn-primary home-link">
+            <i class="fas fa-home"></i>
+            Back to Home
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Add some interactive effects
+      document.addEventListener("mousemove", function (e) {
+        const shapes = document.querySelectorAll(".shape");
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+
+        shapes.forEach((shape, index) => {
+          const speed = (index + 1) * 0.5;
+          const xPos = (x - 0.5) * speed * 50;
+          const yPos = (y - 0.5) * speed * 50;
+          shape.style.transform = `translate(${xPos}px, ${yPos}px)`;
+        });
+      });
+
+      // Auto redirect after 10 seconds (optional)
+      setTimeout(() => {
+        const homeLink = document.querySelector(".home-link");
+        homeLink.style.animation = "pulse 1s infinite";
+        homeLink.innerHTML =
+          '<i class="fas fa-home"></i> Redirecting to Home...';
+
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 3000);
+      }, 10000);
+
+      // Add pulse animation
+      const style = document.createElement("style");
+      style.textContent = `
+            @keyframes pulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.7; }
+            }
+        `;
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>
