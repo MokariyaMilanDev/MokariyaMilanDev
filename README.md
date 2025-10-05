@@ -1,9 +1,8 @@
-<div style="display: flex; justify-content: space-between;">
-  <h1>👨‍💻 Milan Mokariya | Full Stack Developer</h1>
-  <a href="https://mokariyamilandev.github.io/MokariyaMilanDev/" style="font-size: 2rem;" title="Portfolio website">⇗</a>
-</div>
+#👨‍💻 Milan Mokariya | Full Stack Developer
 
 Welcome to my GitHub profile! I'm Milan, a passionate Full Stack Developer with 1 year of experience. I love building modern web applications and continuously learning new technologies.
+
+#### 🔗 **Portfolio**: [MokariyaMilanDev](https://mokariyamilandev.github.io/MokariyaMilanDev/)
 
 #### 🔗 **Linkedin**: [MokariyaMilanDev](https://www.linkedin.com/in/mokariya-milan-dev)
 
