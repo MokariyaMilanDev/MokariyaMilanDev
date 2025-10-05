@@ -519,9 +519,8 @@ a {
 }
 
 .footer-content {
-  max-width: 600px;
-  margin: 0 auto;
   display: grid;
+  place-items: center;
   gap: 1.5rem;
 }
 
@@ -551,7 +550,6 @@ a {
 }
 
 .copyright {
-  text-wrap-mode: nowrap;
   color: var(--text-light);
   font-size: 0.875rem;
 }
