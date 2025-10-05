@@ -43,9 +43,8 @@
     <section class="hero">
       <!-- Bubbles Generation Code: https://codepen.io/z-/pen/zYxdRQy -->
       <!-- Thank you for the inspiration! -->
-      <div class="bubbles">
-        <!-- 128 bubbles generated with JS below -->
-      </div>
+      <!-- <div class="bubbles"></div> -->
+      <canvas id="cursor-canvas"></canvas>
       <div class="hero-content">
         <h1 class="hero-title">Milan Mokariya</h1>
         <h2 class="hero-subtitle">Full Stack Developer</h2>
@@ -77,7 +76,7 @@
           </a>
         </div>
       </div>
-      <svg style="position: fixed; top: 100vh">
+      <!-- <svg style="position: fixed; top: 100vh">
         <defs>
           <filter id="blob">
             <feGaussianBlur
@@ -93,7 +92,7 @@
             />
           </filter>
         </defs>
-      </svg>
+      </svg> -->
     </section>
 
     <section class="section" id="about">
@@ -439,7 +438,9 @@
       </div>
     </footer>
 
-    <script>
+    <script src="./js/cursor.js" type="module"></script>
+
+    <!-- <script>
       // Generate 128 bubbles dynamically
       document.addEventListener("DOMContentLoaded", function () {
         const bubbles = document.querySelector(".bubbles");
@@ -465,7 +466,7 @@
           }
         }
       });
-    </script>
+    </script> -->
 
     <script>
       // Enhanced smooth scrolling for navigation links
