@@ -656,6 +656,41 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-icon::before,
+.contact-icon::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: calc(100% * 2);
+  background: linear-gradient(
+    to left,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  rotate: 45deg;
+  opacity: 0.5;
+  transform: translate(-250%, 0%);
+  animation: sparkle 3s infinite ease-in;
+  animation-delay: 5s;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    transform: translate(-250%, 0%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(250%, 0%);
+  }
 }
 
 .contact-form {
