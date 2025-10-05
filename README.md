@@ -1,4 +1,7 @@
-# 👨‍💻 Milan Mokariya | Full Stack Developer
+<div style="display: flex; justify-content: space-between;">
+  <h1>👨‍💻 Milan Mokariya | Full Stack Developer</h1>
+  <a href="https://mokariyamilandev.github.io/MokariyaMilanDev/" style="font-size: 2rem;" title="Portfolio website">⇗</a>
+</div>
 
 Welcome to my GitHub profile! I'm Milan, a passionate Full Stack Developer with 1 year of experience. I love building modern web applications and continuously learning new technologies.
 
@@ -56,13 +59,15 @@ Welcome to my GitHub profile! I'm Milan, a passionate Full Stack Developer with 
 
 ### 1. **[Skill.College](https://www.skill.college)**
 
-- **Tech**: Full Stack & DevOps  
+- **Tech**: Full Stack & DevOps
 - **Description**: Since June 2024, I have been working on the Skill.College ed-tech project as a Full Stack & DevOps developer. My responsibilities include creating complex and user-friendly frontend designs, architecting scalable backend systems, and maintaining robust, maintainable DevOps clusters to ensure smooth deployments and high availability.
 
 ---
+
 ## 🛠️ Tools & Technologies
 
 ### Frontend
+
 <div>
   <img style="height:40px; border-radius:5px; padding: 2px;" src="https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=ffffff&style=flat-square" alt="HTML5" />
   <img style="height:40px; border-radius:5px; padding: 2px;" src="https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=ffffff&style=flat-square" alt="CSS3" />
@@ -73,6 +78,7 @@ Welcome to my GitHub profile! I'm Milan, a passionate Full Stack Developer with 
 </div>
 
 ### Backend
+
 <div>
   <img style="height:40px; border-radius:5px; padding: 2px;" alt="Node.js" src="https://img.shields.io/badge/-Node.js-339933?logo=nodedotjs&logoColor=ffffff&style=flat-square" />
   <img style="height:40px; border-radius:5px; padding: 2px;" alt="Express.js" src="https://img.shields.io/badge/-Express.js-000000?logo=express&logoColor=ffffff&style=flat-square" />
@@ -80,6 +86,7 @@ Welcome to my GitHub profile! I'm Milan, a passionate Full Stack Developer with 
 </div>
 
 ### Databases
+
 <div>
   <img style="height:40px; border-radius:5px; padding: 2px;" alt="MongoDB" src="https://img.shields.io/badge/-MongoDB-47A248?logo=mongodb&logoColor=ffffff&style=flat-square" />
   <img style="height:40px; border-radius:5px; padding: 2px;" alt="MySQL" src="https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=ffffff&style=flat-square" />
@@ -87,6 +94,7 @@ Welcome to my GitHub profile! I'm Milan, a passionate Full Stack Developer with 
 </div>
 
 ### DevOps & Cloud
+
 <div>
   <img style="height:40px; border-radius:5px; padding: 2px;" alt="Docker" src="https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=ffffff&style=flat-square" />
   <img style="height:40px; border-radius:5px; padding: 2px;" alt="Kubernetes" src="https://img.shields.io/badge/-Kubernetes-326CE5?logo=kubernetes&logoColor=ffffff&style=flat-square" />
@@ -94,6 +102,7 @@ Welcome to my GitHub profile! I'm Milan, a passionate Full Stack Developer with 
 </div>
 
 ### Tools & Utilities
+
 <div>
   <img style="height:40px; border-radius:5px; padding: 2px;" alt="Git" src="https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=ffffff&style=flat-square" />
   <img style="height:40px; border-radius:5px; padding: 2px;" alt="GitHub" src="https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=ffffff&style=flat-square" />
