@@ -135,7 +135,7 @@ a {
 
 /* Navigation */
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -207,15 +207,62 @@ a {
   transform: rotate(90deg);
 }
 
+@keyframes bubble-size {
+  0%,
+  75% {
+    width: var(--size, 4rem);
+    height: var(--size, 4rem);
+  }
+  100% {
+    width: 0rem;
+    height: 0rem;
+  }
+}
+@keyframes bubble-move {
+  0% {
+    bottom: -4rem;
+  }
+  100% {
+    bottom: var(--distance, 10rem);
+  }
+}
+
 /* Hero Section */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background: var(--primary-color);
-  color: white;
-  position: relative;
+  z-index: 1;
   overflow: hidden;
+  position: relative;
+  min-height: 90vh;
+
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  grid-area: footer;
+
+  --footer-background: #ed5565;
+  color: var(--secondary-color);
+  background: var(--primary-color);
+
+  .bubbles {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    background: var(--footer-background);
+    filter: url("#blob");
+
+    .bubble {
+      position: absolute;
+      left: var(--position, 50%);
+      background: var(--footer-background);
+      border-radius: 100%;
+      animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s),
+        bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+      transform: translate(-50%, 100%);
+    }
+  }
 }
 
 @keyframes float {
@@ -229,11 +276,11 @@ a {
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  max-width: 800px;
   margin: 0 auto;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  max-width: 800px;
 }
 
 .hero-title {
