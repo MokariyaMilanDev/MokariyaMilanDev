@@ -578,43 +578,6 @@ function initFooterAnimations() {
   }
 }
 
-// Button animations
-function initButtonAnimations() {
-  gsap.utils.toArray(".button").forEach((button) => {
-    button.addEventListener("mouseenter", () => {
-      gsap.to(button, {
-        duration: 0.3,
-        scale: 1.05,
-        ease: "power2.out",
-      });
-    });
-
-    button.addEventListener("mouseleave", () => {
-      gsap.to(button, {
-        duration: 0.3,
-        scale: 1,
-        ease: "power2.out",
-      });
-    });
-
-    button.addEventListener("mousedown", () => {
-      gsap.to(button, {
-        duration: 0.1,
-        scale: 0.95,
-        ease: "power2.out",
-      });
-    });
-
-    button.addEventListener("mouseup", () => {
-      gsap.to(button, {
-        duration: 0.2,
-        scale: 1.05,
-        ease: "power2.out",
-      });
-    });
-  });
-}
-
 // Cursor animations (enhanced)
 function initCursorAnimations() {
   // Only enable custom cursor on desktop
