@@ -137,7 +137,7 @@ function initSectionAnimations() {
         trigger: header,
         start: "top 80%",
         end: "bottom 20%",
-        toggleActions: "play none none reverse",
+        toggleActions: "play none none none",
       },
     });
 
@@ -170,6 +170,7 @@ function initAboutAnimations() {
   ScrollTrigger.create({
     trigger: ".profile-card",
     start: "top 80%",
+    once: true,
     onEnter: () => {
       gsap.fromTo(
         ".profile-card",
@@ -215,6 +216,7 @@ function initAboutAnimations() {
     ScrollTrigger.create({
       trigger: stat,
       start: "top 80%",
+      once: true,
       onEnter: () => {
         gsap.fromTo(
           stat,
@@ -261,7 +263,7 @@ function initSkillsAnimations() {
         trigger: category,
         start: "top 80%",
         end: "bottom 20%",
-        toggleActions: "play none none reverse",
+        toggleActions: "play none none none",
       },
     });
 
@@ -336,7 +338,7 @@ function initProjectsAnimations() {
         trigger: card,
         start: "top 80%",
         end: "bottom 20%",
-        toggleActions: "play none none reverse",
+        toggleActions: "play none none none",
       },
     });
 
@@ -424,7 +426,7 @@ function initContactAnimations() {
         trigger: contactContent,
         start: "top 80%",
         end: "bottom 20%",
-        toggleActions: "play none none reverse",
+        toggleActions: "play none none none",
       },
     });
 
@@ -445,6 +447,7 @@ function initContactAnimations() {
     ScrollTrigger.create({
       trigger: method,
       start: "top 80%",
+      once: true,
       onEnter: () => {
         gsap.fromTo(
           method,
@@ -485,6 +488,7 @@ function initContactAnimations() {
     ScrollTrigger.create({
       trigger: contactForm,
       start: "top 80%",
+      once: true,
       onEnter: () => {
         gsap.fromTo(
           contactForm.querySelector("i"),
@@ -516,6 +520,7 @@ function initFooterAnimations() {
     ScrollTrigger.create({
       trigger: link,
       start: "top 90%",
+      once: true,
       onEnter: () => {
         gsap.fromTo(
           link,
@@ -557,6 +562,7 @@ function initFooterAnimations() {
     ScrollTrigger.create({
       trigger: githubStats,
       start: "top 90%",
+      once: true,
       onEnter: () => {
         gsap.fromTo(
           githubStats,
@@ -703,6 +709,7 @@ function initTextAnimations() {
     ScrollTrigger.create({
       trigger: char.closest(".section-title"),
       start: "top 80%",
+      once: true,
       onEnter: () => {
         gsap.fromTo(
           char,
