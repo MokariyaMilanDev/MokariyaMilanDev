@@ -65,7 +65,7 @@ function initNavbarAnimations() {
             duration: 0.5,
             y: 0,
             opacity: 1,
-            stagger: 0.1,
+            stagger: 0.2,
             ease: "back.out(1.7)",
           }
         );
