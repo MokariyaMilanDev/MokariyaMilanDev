@@ -540,19 +540,15 @@ function initFooterAnimations() {
     // Hover effect
     link.addEventListener("mouseenter", () => {
       gsap.to(link, {
-        duration: 0.3,
-        scale: 1.2,
-        rotation: 360,
-        ease: "power2.out",
+        duration: 0.1,
+        scale: 1.1,
       });
     });
 
     link.addEventListener("mouseleave", () => {
       gsap.to(link, {
-        duration: 0.3,
+        duration: 0.1,
         scale: 1,
-        rotation: 0,
-        ease: "power2.out",
       });
     });
   });
