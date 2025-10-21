@@ -4,7 +4,7 @@ import { waitForGSAP } from "./gsap-init.js";
 // Initialize GSAP and ScrollTrigger
 function initGSAP() {
   if (typeof gsap !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TextPlugin);
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
     return true;
   }
   return false;
@@ -305,25 +305,25 @@ function initSkillsAnimations() {
   });
 
   // Hover animations for skill categories
-  gsap.utils.toArray(".skill-category").forEach((category) => {
-    category.addEventListener("mouseenter", () => {
-      gsap.to(category, {
-        duration: 0.3,
-        y: -10,
-        scale: 1.02,
-        ease: "power2.out",
-      });
-    });
+  // gsap.utils.toArray(".skill-category").forEach((category) => {
+  //   category.addEventListener("mouseenter", () => {
+  //     gsap.to(category, {
+  //       duration: 0.3,
+  //       y: -10,
+  //       scale: 1.02,
+  //       ease: "power2.out",
+  //     });
+  //   });
 
-    category.addEventListener("mouseleave", () => {
-      gsap.to(category, {
-        duration: 0.3,
-        y: 0,
-        scale: 1,
-        ease: "power2.out",
-      });
-    });
-  });
+  //   category.addEventListener("mouseleave", () => {
+  //     gsap.to(category, {
+  //       duration: 0.3,
+  //       y: 0,
+  //       scale: 1,
+  //       ease: "power2.out",
+  //     });
+  //   });
+  // });
 }
 
 // Projects section animations
@@ -391,27 +391,27 @@ function initProjectsAnimations() {
   });
 
   // Project card hover effects
-  gsap.utils.toArray(".project-card").forEach((card) => {
-    card.addEventListener("mouseenter", () => {
-      gsap.to(card, {
-        duration: 0.4,
-        y: -15,
-        scale: 1.03,
-        rotationY: 5,
-        ease: "power2.out",
-      });
-    });
+  // gsap.utils.toArray(".project-card").forEach((card) => {
+  //   card.addEventListener("mouseenter", () => {
+  //     gsap.to(card, {
+  //       duration: 0.4,
+  //       y: -10,
+  //       scale: 1.02,
+  //       rotationY: 5,
+  //       ease: "power2.out",
+  //     });
+  //   });
 
-    card.addEventListener("mouseleave", () => {
-      gsap.to(card, {
-        duration: 0.4,
-        y: 0,
-        scale: 1,
-        rotationY: 0,
-        ease: "power2.out",
-      });
-    });
-  });
+  //   card.addEventListener("mouseleave", () => {
+  //     gsap.to(card, {
+  //       duration: 0.4,
+  //       y: 0,
+  //       scale: 1,
+  //       rotationY: 0,
+  //       ease: "power2.out",
+  //     });
+  //   });
+  // });
 }
 
 // Contact section animations
@@ -652,21 +652,6 @@ function initCursorAnimations() {
   });
 }
 
-// Parallax effects
-function initParallaxEffects() {
-  // Floating elements
-  gsap.utils.toArray(".skill-icon").forEach((icon, i) => {
-    gsap.to(icon, {
-      y: -20,
-      duration: 2 + i * 0.5,
-      repeat: -1,
-      yoyo: true,
-      ease: "power1.inOut",
-      delay: i * 0.2,
-    });
-  });
-}
-
 // Scroll animations
 function initScrollAnimations() {
   // Smooth scroll for navigation
@@ -784,9 +769,7 @@ async function initAnimations() {
   initProjectsAnimations();
   initContactAnimations();
   initFooterAnimations();
-  initButtonAnimations();
   initCursorAnimations();
-  initParallaxEffects();
   initScrollAnimations();
   initTextAnimations();
 

@@ -3,49 +3,149 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Milan Mokariya | Full Stack Developer</title>
+
+    <!-- SEO Meta Tags -->
+    <title>Milan Mokariya | Full Stack Developer & DevOps Engineer</title>
+    <meta
+      name="description"
+      content="Milan Mokariya - Experienced Full Stack Developer & DevOps Engineer with 1+ years of expertise in React, Node.js, Kubernetes, Docker, and cloud technologies. Building scalable web applications and maintaining robust infrastructure."
+    />
+    <meta
+      name="keywords"
+      content="Full Stack Developer, DevOps Engineer, Kubernetes, Docker, React, Node.js, Web Development, Cloud Computing, Milan Mokariya"
+    />
+    <meta name="author" content="Milan Mokariya" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://mokariyamilandev.github.io/MokariyaMilanDev/"
+    />
+    <meta
+      property="og:title"
+      content="Milan Mokariya | Full Stack Developer & DevOps Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Experienced Full Stack Developer with expertise in modern web technologies and DevOps practices. Let's build something amazing together!"
+    />
+    <meta
+      property="og:image"
+      content="https://mokariyamilandev.github.io/MokariyaMilanDev/assets/preview.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://mokariyamilandev.github.io/MokariyaMilanDev/"
+    />
+    <meta
+      property="twitter:title"
+      content="Milan Mokariya | Full Stack Developer & DevOps Engineer"
+    />
+    <meta
+      property="twitter:description"
+      content="Experienced Full Stack Developer with expertise in modern web technologies and DevOps practices."
+    />
+    <meta
+      property="twitter:image"
+      content="https://mokariyamilandev.github.io/MokariyaMilanDev/assets/preview.png"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/apple-touch-icon.png"
+    />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/styles/utils.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
 
     <!-- GSAP Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
   </head>
   <body>
-    <!-- Loading Screen -->
-
-    <!-- Navigation -->
+    <!--? Navigation -->
     <nav class="navbar" id="navbar">
       <div class="container">
         <div class="nav-content">
-          <h2>
-            <a href="#" class="logo">.dev</a>
-          </h2>
+          <a href="#" class="logo | flex items-center justify-center">
+            <img
+              class="br-rect"
+              src="./assets/apple-touch-icon.png"
+              alt="Milan Mokariya Logo"
+              loading="lazy"
+            />
+          </a>
           <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#devops">DevOps</a></li>
             <li><a href="#projects">Projects</a></li>
+            <!-- <li><a href="#blog">Blog</a></li> -->
             <li><a href="#contact">Contact</a></li>
           </ul>
-          <button class="mobile-menu-btn" id="mobileMenuBtn">
-            <i class="fas fa-bars"></i>
-          </button>
+          <div class="nav-actions | flex g-4 items-center justify-center">
+            <button
+              class="theme-toggle"
+              id="themeToggle"
+              aria-label="Toggle dark mode"
+            >
+              <i class="fas fa-moon"></i>
+            </button>
+            <button
+              class="mobile-menu-btn"
+              id="mobileMenuBtn"
+              aria-label="Toggle mobile menu"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
         </div>
       </div>
     </nav>
 
-    <!-- About Section -->
+    <!--? Hero -->
     <section class="hero">
       <canvas id="cursor-canvas"></canvas>
       <div class="hero-content">
@@ -81,9 +181,10 @@
       </div>
     </section>
 
+    <!--? About -->
     <section class="section" id="about">
       <div class="container">
-        <div class="section-header scroll-animate">
+        <div class="section-header">
           <h2 class="section-title">About Me</h2>
           <p class="section-subtitle">
             Get to know more about my background, experience, and what drives my
@@ -112,12 +213,50 @@
             </p>
             <p>
               Currently working on the
-              <a href="https://skill.college"><u>Skill.College</u></a> ed-tech
-              project since June 2024, where I handle full-stack development and
-              DevOps responsibilities. I enjoy creating complex user-friendly
-              frontend designs, architecting scalable backend systems, and
-              maintaining robust DevOps clusters.
+              <a href="https://skill.college" target="_blank"
+                ><u>Skill.College</u></a
+              >
+              ed-tech project since June 2024, where I handle full-stack
+              development and DevOps responsibilities. I enjoy creating complex
+              user-friendly frontend designs, architecting scalable backend
+              systems, and maintaining robust DevOps clusters.
             </p>
+
+            <!-- <div class="career-objective">
+              <h4><i class="fas fa-bullseye"></i> What I'm Looking For</h4>
+              <p>
+                I'm actively seeking <strong>Full Stack Developer</strong> and
+                <strong>DevOps Engineer</strong>
+                roles where I can contribute to building scalable microservices
+                architectures, implement robust CI/CD pipelines, and work with
+                cutting-edge technologies. I'm particularly interested in
+                opportunities involving:
+              </p>
+              <ul class="objective-list">
+                <li>
+                  <i class="fas fa-check-circle"></i> Cloud-native application
+                  development
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Kubernetes orchestration
+                  and management
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Backend API design and
+                  microservices
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Infrastructure as Code and
+                  automation
+                </li>
+              </ul>
+              <div class="availability-badge">
+                <span class="status-dot"></span>
+                <strong>Status:</strong> Open to Full-time & Remote
+                Opportunities
+              </div>
+            </div> -->
+
             <p>
               When I'm not coding, I enjoy collaborating with developers around
               the world and contributing to open-source projects. Let's build
@@ -130,125 +269,437 @@
                 <span class="stat-label">Years Experience</span>
               </div>
               <div class="stat-item" tabindex="0">
-                <span class="stat-number">15+</span>
+                <span class="stat-number">20+</span>
                 <span class="stat-label">Technologies</span>
               </div>
               <div class="stat-item" tabindex="0">
                 <span class="stat-number">1</span>
                 <span class="stat-label">Major Project</span>
               </div>
+              <div class="stat-item" tabindex="0">
+                <span class="stat-number">99.9%</span>
+                <span class="stat-label">Uptime Achieved</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
+    <!--? Skills Section -->
     <section class="section" id="skills">
       <div class="container">
-        <div class="section-header scroll-animate">
+        <div class="section-header">
           <h2 class="section-title">Technical Skills</h2>
           <p class="section-subtitle">
             Here are the technologies and tools I work with to bring ideas to
-            life.
+            life, organized by proficiency level.
           </p>
         </div>
 
+        <!-- Proficiency Legend -->
+        <div class="proficiency-legend">
+          <span class="legend-item">
+            <span class="legend-badge proficient"></span> Proficient
+          </span>
+          <span class="legend-item">
+            <span class="legend-badge intermediate"></span> Intermediate
+          </span>
+          <span class="legend-item">
+            <span class="legend-badge learning"></span> Learning
+          </span>
+        </div>
+
         <div class="skills-grid">
-          <div class="skill-category scroll-animate" tabindex="0">
+          <div class="skill-category" tabindex="0">
             <div class="skill-icon">
               <i class="fas fa-laptop-code"></i>
             </div>
             <h3>Frontend Development</h3>
             <div class="skill-tags">
-              <span class="skill-tag">HTML5</span>
-              <span class="skill-tag">CSS3</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">React.js</span>
-              <span class="skill-tag">Next.js</span>
-              <span class="skill-tag">Redux</span>
-              <span class="skill-tag">Responsive Design</span>
+              <span class="skill-tag proficient" data-level="proficient"
+                >HTML5</span
+              >
+              <span class="skill-tag proficient" data-level="proficient"
+                >CSS3</span
+              >
+              <span class="skill-tag proficient" data-level="proficient"
+                >JavaScript</span
+              >
+              <span class="skill-tag proficient" data-level="proficient"
+                >React.js</span
+              >
+              <span class="skill-tag intermediate" data-level="intermediate"
+                >Next.js</span
+              >
+              <span class="skill-tag intermediate" data-level="intermediate"
+                >Redux</span
+              >
+              <span class="skill-tag proficient" data-level="proficient"
+                >Responsive Design</span
+              >
             </div>
           </div>
 
-          <div class="skill-category scroll-animate" tabindex="0">
+          <div class="skill-category" tabindex="0">
             <div class="skill-icon">
               <i class="fas fa-server"></i>
             </div>
             <h3>Backend Development</h3>
             <div class="skill-tags">
-              <span class="skill-tag">Node.js</span>
-              <span class="skill-tag">Express.js</span>
-              <span class="skill-tag">FastAPI</span>
-              <span class="skill-tag">RESTful APIs</span>
-              <span class="skill-tag">JWT</span>
-              <span class="skill-tag">OAuth</span>
-              <span class="skill-tag">Microservices</span>
+              <span class="skill-tag proficient" data-level="proficient"
+                >Node.js</span
+              >
+              <span class="skill-tag proficient" data-level="proficient"
+                >Express.js</span
+              >
+              <span class="skill-tag intermediate" data-level="intermediate"
+                >FastAPI</span
+              >
+              <span class="skill-tag proficient" data-level="proficient"
+                >RESTful APIs</span
+              >
+              <span class="skill-tag proficient" data-level="proficient"
+                >JWT</span
+              >
+              <span class="skill-tag intermediate" data-level="intermediate"
+                >OAuth</span
+              >
+              <span class="skill-tag intermediate" data-level="intermediate"
+                >Microservices</span
+              >
             </div>
           </div>
 
-          <div class="skill-category scroll-animate" tabindex="0">
+          <div class="skill-category" tabindex="0">
             <div class="skill-icon">
               <i class="fas fa-database"></i>
             </div>
             <h3>Databases</h3>
             <div class="skill-tags">
-              <span class="skill-tag">MySQL</span>
-              <span class="skill-tag">PostgreSQL</span>
-              <span class="skill-tag">MongoDB</span>
-              <span class="skill-tag">SQL</span>
-              <span class="skill-tag">NoSQL</span>
+              <span class="skill-tag proficient" data-level="proficient"
+                >MySQL</span
+              >
+              <span class="skill-tag intermediate" data-level="intermediate"
+                >PostgreSQL</span
+              >
+              <span class="skill-tag proficient" data-level="proficient"
+                >MongoDB</span
+              >
+              <span class="skill-tag proficient" data-level="proficient"
+                >SQL</span
+              >
+              <span class="skill-tag intermediate" data-level="intermediate"
+                >NoSQL</span
+              >
             </div>
           </div>
 
-          <div class="skill-category scroll-animate" tabindex="0">
+          <div class="skill-category" tabindex="0">
             <div class="skill-icon">
               <i class="fas fa-cloud"></i>
             </div>
             <h3>DevOps & Cloud</h3>
             <div class="skill-tags">
-              <span class="skill-tag">Docker</span>
-              <span class="skill-tag">Kubernetes</span>
-              <span class="skill-tag">Linux</span>
-              <span class="skill-tag">CI/CD</span>
+              <span class="skill-tag proficient" data-level="proficient"
+                >Docker</span
+              >
+              <span class="skill-tag intermediate" data-level="intermediate"
+                >Kubernetes</span
+              >
+              <span class="skill-tag proficient" data-level="proficient"
+                >Linux</span
+              >
+              <span class="skill-tag intermediate" data-level="intermediate"
+                >CI/CD</span
+              >
+              <span class="skill-tag intermediate" data-level="intermediate"
+                >Nginx</span
+              >
             </div>
           </div>
 
-          <div class="skill-category scroll-animate" tabindex="0">
+          <div class="skill-category" tabindex="0">
             <div class="skill-icon">
               <i class="fas fa-tools"></i>
             </div>
-            <h3>Tools & Others</h3>
+            <h3>Tools & Version Control</h3>
             <div class="skill-tags">
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">GitHub</span>
-              <span class="skill-tag">VS Code</span>
-              <span class="skill-tag">Postman</span>
-              <span class="skill-tag">NPM</span>
-              <span class="skill-tag">Pip</span>
+              <span class="skill-tag proficient" data-level="proficient"
+                >Git</span
+              >
+              <span class="skill-tag proficient" data-level="proficient"
+                >GitHub</span
+              >
+              <span class="skill-tag proficient" data-level="proficient"
+                >VS Code</span
+              >
+              <span class="skill-tag proficient" data-level="proficient"
+                >Postman</span
+              >
+              <span class="skill-tag proficient" data-level="proficient"
+                >NPM</span
+              >
+              <span class="skill-tag proficient" data-level="proficient"
+                >Pip</span
+              >
             </div>
           </div>
 
-          <div class="skill-category scroll-animate" tabindex="0">
+          <div class="skill-category" tabindex="0">
             <div class="skill-icon">
               <i class="fas fa-graduation-cap"></i>
             </div>
             <h3>Currently Learning</h3>
             <div class="skill-tags">
-              <span class="skill-tag">TypeScript</span>
-              <span class="skill-tag">Advanced SQL</span>
-              <span class="skill-tag">Advanced Docker</span>
-              <span class="skill-tag">Advanced K8s</span>
+              <span class="skill-tag learning" data-level="learning"
+                >TypeScript</span
+              >
+              <span class="skill-tag learning" data-level="learning"
+                >Advanced SQL</span
+              >
+              <span class="skill-tag learning" data-level="learning"
+                >Advanced Docker</span
+              >
+              <span class="skill-tag learning" data-level="learning"
+                >Advanced K8s</span
+              >
+              <span class="skill-tag learning" data-level="learning"
+                >Terraform</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications Section -->
+        <div class="certifications-section">
+          <h3 class="certifications-title">
+            <i class="fas fa-certificate"></i> Certifications & Achievements
+          </h3>
+          <div class="certifications-grid">
+            <div class="certification-item">
+              <i class="fas fa-award"></i>
+              <h4>Arjun Award</h4>
+              <p>Skill.College</p>
+              <span class="cert-date">2025</span>
+            </div>
+            <div class="certification-item">
+              <i class="fas fa-trophy"></i>
+              <h4>Academic Excellence</h4>
+              <p>RKU</p>
+              <span class="cert-date">2024</span>
+            </div>
+            <div class="certification-item placeholder-cert">
+              <i class="fas fa-rocket"></i>
+              <h4>More Coming Soon!</h4>
+              <p>Continuously upskilling</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
+    <!--? DevOps & Infrastructure Section -->
+    <section class="section devops-section" id="devops">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">DevOps & Infrastructure</h2>
+          <p class="section-subtitle">
+            My approach to building scalable, reliable, and automated
+            infrastructure
+          </p>
+        </div>
+
+        <div class="devops-content">
+          <!-- Architecture Overview -->
+          <div class="architecture-card">
+            <div class="card-header">
+              <i class="fas fa-project-diagram"></i>
+              <h3>Infrastructure Architecture</h3>
+            </div>
+            <div class="architecture-diagram">
+              <!-- Placeholder for architecture diagram -->
+              <div class="diagram-placeholder">
+                <i class="fas fa-sitemap"></i>
+                <p>[Architecture Diagram Placeholder]</p>
+                <span class="diagram-note"
+                  >Replace with your actual infrastructure diagram showing K8s
+                  clusters, microservices, load balancers, etc.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- DevOps Stack Grid -->
+          <div class="devops-grid">
+            <div class="devops-card">
+              <div class="devops-icon">
+                <i class="fab fa-docker"></i>
+              </div>
+              <h3>Containerization</h3>
+              <ul class="devops-list">
+                <li><i class="fas fa-check"></i> Docker multi-stage builds</li>
+                <li>
+                  <i class="fas fa-check"></i> Container optimization (<50MB
+                  images)
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Docker Compose orchestration
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Private container registry setup
+                </li>
+              </ul>
+              <div class="metric-badge">
+                <span class="metric-value">80%</span>
+                <span class="metric-label">Deployment time reduction</span>
+              </div>
+            </div>
+
+            <div class="devops-card">
+              <div class="devops-icon">
+                <i class="fas fa-dharmachakra"></i>
+              </div>
+              <h3>Kubernetes Orchestration</h3>
+              <ul class="devops-list">
+                <li>
+                  <i class="fas fa-check"></i> K8s cluster setup & management
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Helm charts for microservices
+                </li>
+                <li><i class="fas fa-check"></i> Auto-scaling (HPA/VPA)</li>
+                <li>
+                  <i class="fas fa-check"></i> Rolling updates & blue-green
+                  deployments
+                </li>
+              </ul>
+              <div class="metric-badge">
+                <span class="metric-value">99.9%</span>
+                <span class="metric-label">Uptime achieved</span>
+              </div>
+            </div>
+
+            <div class="devops-card">
+              <div class="devops-icon">
+                <i class="fas fa-infinity"></i>
+              </div>
+              <h3>CI/CD Pipelines</h3>
+              <ul class="devops-list">
+                <li><i class="fas fa-check"></i> GitHub Actions workflows</li>
+                <li><i class="fas fa-check"></i> Automated testing & builds</li>
+                <li>
+                  <i class="fas fa-check"></i> Continuous deployment automation
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Environment-specific
+                  configurations
+                </li>
+              </ul>
+              <div class="metric-badge">
+                <span class="metric-value">10 min</span>
+                <span class="metric-label">Average deployment time</span>
+              </div>
+            </div>
+
+            <div class="devops-card">
+              <div class="devops-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>Monitoring & Logging</h3>
+              <ul class="devops-list">
+                <li><i class="fas fa-check"></i> Centralized logging setup</li>
+                <li><i class="fas fa-check"></i> Performance monitoring</li>
+                <li><i class="fas fa-check"></i> Alert configuration</li>
+                <li><i class="fas fa-check"></i> Resource usage tracking</li>
+              </ul>
+              <div class="metric-badge">
+                <span class="metric-value">24/7</span>
+                <span class="metric-label">Automated monitoring</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tech Stack Used -->
+          <div class="devops-stack">
+            <h3><i class="fas fa-layer-group"></i> DevOps Tech Stack</h3>
+            <div class="stack-badges">
+              <span class="stack-badge"
+                ><i class="fab fa-docker"></i> Docker</span
+              >
+              <span class="stack-badge"
+                ><i class="fas fa-dharmachakra"></i> Kubernetes</span
+              >
+              <span class="stack-badge"
+                ><i class="fab fa-github"></i> GitHub Actions</span
+              >
+              <span class="stack-badge"
+                ><i class="fab fa-linux"></i> Linux</span
+              >
+              <span class="stack-badge"
+                ><i class="fas fa-server"></i> Nginx</span
+              >
+              <span class="stack-badge"
+                ><i class="fas fa-database"></i> Database Clustering</span
+              >
+              <span class="stack-badge"
+                ><i class="fas fa-shield-alt"></i> SSL/TLS</span
+              >
+              <span class="stack-badge"
+                ><i class="fas fa-network-wired"></i> Load Balancing</span
+              >
+            </div>
+          </div>
+
+          <!-- Key Achievements -->
+          <div class="devops-achievements">
+            <h3><i class="fas fa-star"></i> Key DevOps Achievements</h3>
+            <div class="achievements-grid">
+              <div class="achievement-item">
+                <div class="achievement-icon">
+                  <i class="fas fa-rocket"></i>
+                </div>
+                <h4>Reduced deployment time from 30min to 10min</h4>
+                <p>
+                  Implemented automated CI/CD pipelines with parallel builds
+                </p>
+              </div>
+              <div class="achievement-item">
+                <div class="achievement-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h4>Scaled to handle [10k+] concurrent users</h4>
+                <p>
+                  Configured K8s auto-scaling and optimized resource allocation
+                </p>
+              </div>
+              <div class="achievement-item">
+                <div class="achievement-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4>99.9% uptime with zero-downtime deployments</h4>
+                <p>Implemented rolling updates and health checks</p>
+              </div>
+              <div class="achievement-item">
+                <div class="achievement-icon">
+                  <i class="fas fa-dollar-sign"></i>
+                </div>
+                <h4>[Cost optimization achievement placeholder]</h4>
+                <p>
+                  Reduced infrastructure costs through efficient resource
+                  management
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--? Projects Section -->
     <section class="section" id="projects">
       <div class="container">
-        <div class="section-header scroll-animate">
+        <div class="section-header">
           <h2 class="section-title">Featured Projects</h2>
           <p class="section-subtitle">
             Here are some of the projects I've worked on that showcase my skills
@@ -257,24 +708,87 @@
         </div>
 
         <div class="projects-grid">
-          <div class="project-card scroll-animate" tabindex="0">
+          <div class="project-card featured" tabindex="0">
+            <div class="featured-badge">
+              <i class="fas fa-star"></i> Featured Project
+            </div>
             <div class="project-image">
-              <i class="fas fa-graduation-cap"></i>
+              <div class="project-screenshot">
+                <img
+                  src="./assets/projects/skillcollege.png"
+                  alt="Skill.College Platform Screenshot"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  loading="lazy"
+                />
+              </div>
             </div>
             <div class="project-content">
               <h3 class="project-title">Skill.College</h3>
-              <p class="project-tech">Full Stack & DevOps</p>
+
+              <div class="tech-stack-badges">
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">Express</span>
+                <span class="tech-badge">MongoDB</span>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">Kubernetes</span>
+              </div>
+
               <p class="project-description">
-                Ed-tech platform where I work as a Full Stack & DevOps developer
-                since June 2024. Responsible for creating complex frontend
-                designs, architecting scalable backend systems, and maintaining
-                robust DevOps clusters for high availability.
+                Comprehensive ed-tech platform where I serve as Full Stack &
+                DevOps developer since June 2024. Built and maintained scalable
+                architecture handling thousands of concurrent users with focus
+                on performance and reliability.
               </p>
+
+              <!-- Key Metrics -->
+              <div class="project-metrics">
+                <div class="metric-item">
+                  <i class="fas fa-users"></i>
+                  <span class="metric-value">2k+</span>
+                  <span class="metric-label">Active Users</span>
+                </div>
+                <div class="metric-item">
+                  <i class="fas fa-tachometer-alt"></i>
+                  <span class="metric-value">99.9%</span>
+                  <span class="metric-label">Uptime</span>
+                </div>
+                <div class="metric-item">
+                  <i class="fas fa-bolt"></i>
+                  <span class="metric-value">99%</span>
+                  <span class="metric-label">API Speed ↑</span>
+                </div>
+              </div>
+
+              <!-- Key Contributions -->
+              <div class="project-contributions">
+                <h4>Key Contributions:</h4>
+                <ul>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Architected
+                    microservices-based backend reducing response time by 99%
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Implemented K8s
+                    auto-scaling to handle traffic spikes
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Set up CI/CD pipeline
+                    reducing deployment time from 30min to 10min
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle"></i> Achieved 99.9% uptime
+                    with zero-downtime deployments
+                  </li>
+                </ul>
+              </div>
+
               <div class="project-links">
                 <a
                   href="https://www.skill.college"
                   target="_blank"
-                  class="project-link"
+                  class="project-link primary"
+                  aria-label="Visit Skill.College website"
                 >
                   <i class="fas fa-external-link-alt"></i>
                   Live Demo
@@ -283,25 +797,66 @@
             </div>
           </div>
 
-          <!-- Additional project placeholders -->
-          <div class="project-card scroll-animate" tabindex="0">
+          <!-- Portfolio Website -->
+          <div class="project-card" tabindex="0">
             <div class="project-image">
-              <i class="fas fa-code"></i>
+              <div class="project-screenshot">
+                <img
+                  src="./assets/projects/portfolio-screenshot.png"
+                  alt="Portfolio Website Screenshot"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  loading="lazy"
+                />
+                <div class="screenshot-placeholder" style="display: none">
+                  <i class="fas fa-code"></i>
+                  <p>Add Screenshot Here</p>
+                </div>
+              </div>
             </div>
             <div class="project-content">
               <h3 class="project-title">Portfolio Website</h3>
-              <p class="project-tech">HTML, CSS, JavaScript</p>
+
+              <div class="tech-stack-badges">
+                <span class="tech-badge">HTML5</span>
+                <span class="tech-badge">CSS3</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">GSAP</span>
+              </div>
+
               <p class="project-description">
-                A modern, responsive portfolio website showcasing my skills,
-                projects, and experience. Built with clean code practices and
-                modern design principles.
+                Modern, responsive portfolio website showcasing skills and
+                projects. Features smooth animations, dark mode, and optimized
+                performance.
               </p>
+
+              <div class="project-metrics">
+                <div class="metric-item">
+                  <i class="fas fa-rocket"></i>
+                  <span class="metric-value">95+</span>
+                  <span class="metric-label">Lighthouse Score</span>
+                </div>
+                <div class="metric-item">
+                  <i class="fas fa-mobile-alt"></i>
+                  <span class="metric-value">100%</span>
+                  <span class="metric-label">Responsive</span>
+                </div>
+              </div>
+
               <div class="project-links">
-                <a href="#" class="project-link">
+                <a
+                  href="https://github.com/MokariyaMilanDev/MokariyaMilanDev"
+                  target="_blank"
+                  class="project-link"
+                  aria-label="View portfolio source code on GitHub"
+                >
                   <i class="fab fa-github"></i>
                   View Code
                 </a>
-                <a href="#" class="project-link">
+                <a
+                  href="#"
+                  class="project-link"
+                  aria-label="View live portfolio website"
+                >
                   <i class="fas fa-external-link-alt"></i>
                   Live Demo
                 </a>
@@ -312,10 +867,339 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!--! Testimonials Section -->
+    <section class="section testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Testimonials</h2>
+          <p class="section-subtitle">
+            What colleagues and clients say about working with me
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card" tabindex="0">
+            <div class="quote-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">
+              "[Milan was instrumental in designing our backend API
+              architecture. His expertise in Node.js and microservices helped us
+              scale to handle 10x more traffic. His DevOps skills ensured smooth
+              deployments with zero downtime.]"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="author-info">
+                <h4>[Client/Colleague Name]</h4>
+                <p>[Position] at [Company]</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" tabindex="0">
+            <div class="quote-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">
+              "[Working with Milan on the Skill.College project has been
+              amazing. His ability to solve complex problems and optimize
+              performance is outstanding. He's always eager to learn and share
+              knowledge with the team.]"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="author-info">
+                <h4>[Team Member Name]</h4>
+                <p>[Position] at Skill.College</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" tabindex="0">
+            <div class="quote-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">
+              "[Milan's expertise in Kubernetes and Docker helped us modernize
+              our infrastructure. The CI/CD pipeline he set up reduced our
+              deployment time significantly. Highly recommend his DevOps
+              skills!]"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="author-info">
+                <h4>[Mentor/Colleague Name]</h4>
+                <p>[Position/Role]</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--! Blog/Articles Section -->
+    <!-- <section class="section blog-section" id="blog">
+      <div class="container">
+        <div class="section-header ">
+          <h2 class="section-title">Blog & Articles</h2>
+          <p class="section-subtitle">
+            Sharing knowledge and insights about development, DevOps, and best
+            practices
+          </p>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-card " tabindex="0">
+            <div class="blog-image">
+              <img
+                src="./assets/blog/kubernetes-placeholder.jpg"
+                alt="Kubernetes article"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                loading="lazy" 
+              />
+              <div class="blog-image-placeholder" style="display: none">
+                <i class="fas fa-dharmachakra"></i>
+              </div>
+              <span class="blog-category">DevOps</span>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-date"
+                  ><i class="far fa-calendar"></i> [Date]</span
+                >
+                <span class="blog-read-time"
+                  ><i class="far fa-clock"></i> [X] min read</span
+                >
+              </div>
+              <h3 class="blog-title">
+                [Scaling Microservices with Kubernetes: A Practical Guide]
+              </h3>
+              <p class="blog-excerpt">
+                [Learn how we scaled our microservices architecture to handle
+                10k concurrent users using Kubernetes auto-scaling, load
+                balancing, and efficient resource management...]
+              </p>
+              <div class="blog-tags">
+                <span class="blog-tag">Kubernetes</span>
+                <span class="blog-tag">Microservices</span>
+                <span class="blog-tag">Scaling</span>
+              </div>
+              <a href="#" class="blog-link">
+                Read More <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="blog-card " tabindex="0">
+            <div class="blog-image">
+              <div class="blog-image-placeholder">
+                <i class="fas fa-infinity"></i>
+              </div>
+              <span class="blog-category">CI/CD</span>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-date"
+                  ><i class="far fa-calendar"></i> [Date]</span
+                >
+                <span class="blog-read-time"
+                  ><i class="far fa-clock"></i> [X] min read</span
+                >
+              </div>
+              <h3 class="blog-title">
+                [Building Efficient CI/CD Pipelines with GitHub Actions]
+              </h3>
+              <p class="blog-excerpt">
+                [A deep dive into optimizing CI/CD workflows. Discover how we
+                reduced deployment time from 30 minutes to 10 minutes using
+                parallel builds, caching, and automation...]
+              </p>
+              <div class="blog-tags">
+                <span class="blog-tag">CI/CD</span>
+                <span class="blog-tag">GitHub Actions</span>
+                <span class="blog-tag">DevOps</span>
+              </div>
+              <a href="#" class="blog-link">
+                Read More <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="blog-card " tabindex="0">
+            <div class="blog-image">
+              <div class="blog-image-placeholder">
+                <i class="fas fa-code"></i>
+              </div>
+              <span class="blog-category">Backend</span>
+            </div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="blog-date"
+                  ><i class="far fa-calendar"></i> [Date]</span
+                >
+                <span class="blog-read-time"
+                  ><i class="far fa-clock"></i> [X] min read</span
+                >
+              </div>
+              <h3 class="blog-title">
+                [Node.js Performance Optimization: Best Practices]
+              </h3>
+              <p class="blog-excerpt">
+                [Explore proven techniques to optimize Node.js applications.
+                Learn about caching strategies, database query optimization, and
+                async patterns that improved our API response time by 40%...]
+              </p>
+              <div class="blog-tags">
+                <span class="blog-tag">Node.js</span>
+                <span class="blog-tag">Performance</span>
+                <span class="blog-tag">Backend</span>
+              </div>
+              <a href="#" class="blog-link">
+                Read More <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="blog-cta ">
+          <p>
+            <i class="fas fa-pen"></i> Want to read more articles?
+            <a href="#" class="cta-link"
+              >Visit my blog <i class="fas fa-arrow-right"></i
+            ></a>
+          </p>
+        </div>
+      </div>
+    </section> -->
+
+    <!--? Future Roadmap Section -->
+    <section class="section roadmap-section" id="roadmap">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">What's Next</h2>
+          <p class="section-subtitle">
+            My learning roadmap and upcoming technical goals
+          </p>
+        </div>
+
+        <div class="roadmap-content">
+          <div class="roadmap-category">
+            <div class="category-header">
+              <i class="fas fa-bullseye"></i>
+              <h3>Current Focus</h3>
+            </div>
+            <div class="roadmap-items">
+              <div class="roadmap-item">
+                <span class="item-icon"><i class="fas fa-code"></i></span>
+                <div class="item-content">
+                  <h4>Advanced FastAPI</h4>
+                  <p>
+                    Enhancing skills in building high-performance APIs with
+                    FastAPI
+                  </p>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 70%"></div>
+                  </div>
+                  <span class="progress-label">70% Complete</span>
+                </div>
+              </div>
+              <div class="roadmap-item">
+                <span class="item-icon"><i class="fas fa-database"></i></span>
+                <div class="item-content">
+                  <h4>Advanced SQL & Database Optimization</h4>
+                  <p>
+                    Deep dive into query optimization, indexing strategies, and
+                    performance tuning
+                  </p>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 45%"></div>
+                  </div>
+                  <span class="progress-label">45% Complete</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="roadmap-category">
+            <div class="category-header">
+              <i class="fas fa-rocket"></i>
+              <h3>Next Up</h3>
+            </div>
+            <div class="roadmap-items">
+              <div class="roadmap-item">
+                <span class="item-icon"><i class="fas fa-cloud"></i></span>
+                <div class="item-content">
+                  <h4>Cloud Engineering</h4>
+                  <p>
+                    Gaining expertise in AWS/GCP services and cloud architecture
+                  </p>
+                </div>
+              </div>
+              <div class="roadmap-item">
+                <span class="item-icon"><i class="fas fa-cogs"></i></span>
+                <div class="item-content">
+                  <h4>Block Chain Development</h4>
+                  <p>Building decentralized applications and smart contracts</p>
+                </div>
+              </div>
+              <div class="roadmap-item">
+                <span class="item-icon"><i class="fas fa-shield-alt"></i></span>
+                <div class="item-content">
+                  <h4>Security Best Practices & DevSecOps</h4>
+                  <p>
+                    Integrating security into CI/CD pipelines and application
+                    development
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="roadmap-category ">
+            <div class="category-header">
+              <i class="fas fa-lightbulb"></i>
+              <h3>Planned Projects</h3>
+            </div>
+            <div class="roadmap-items">
+              <div class="roadmap-item">
+                <span class="item-icon"
+                  ><i class="fas fa-project-diagram"></i
+                ></span>
+                <div class="item-content">
+                  <h4>[Open Source Contribution]</h4>
+                  <p>
+                    Contributing to popular open-source projects in K8s/DevOps
+                    ecosystem
+                  </p>
+                </div>
+              </div>
+              <div class="roadmap-item">
+                <span class="item-icon"><i class="fas fa-mobile-alt"></i></span>
+                <div class="item-content">
+                  <h4>[Personal Project Idea]</h4>
+                  <p>
+                    Building a developer tool/SaaS product leveraging
+                    cloud-native technologies
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!--? Contact Section -->
     <section class="section" id="contact">
       <div class="container">
-        <div class="section-header scroll-animate">
+        <div class="section-header">
           <h2 class="section-title">Get In Touch</h2>
           <p class="section-subtitle">
             I'm always open to discussing new opportunities and interesting
@@ -323,7 +1207,7 @@
           </p>
         </div>
 
-        <div class="contact scroll-animate">
+        <div class="contact">
           <div class="contact-content">
             <div class="contact-info">
               <h3>Let's Connect</h3>
@@ -384,8 +1268,8 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!--? Footer -->
+    <footer class="footer" id="footer">
       <div class="container">
         <div class="footer-content">
           <div class="social-links">
@@ -413,6 +1297,7 @@
               src="https://github-readme-stats.vercel.app/api/top-langs/?username=MokariyaMilanDev&layout=compact&theme=dark&bg_color=1f2937&text_color=ffffff&title_color=3b82f6&border_color=374151"
               alt="GitHub Stats"
               style="max-width: 100%; height: auto; border-radius: 0.5rem"
+              loading="lazy"
             />
           </div>
 
@@ -424,6 +1309,7 @@
       </div>
     </footer>
 
+    <script src="./js/theme-toggle.js"></script>
     <script src="./js/cursor.js" type="module"></script>
     <script src="./js/gsap-init.js" type="module"></script>
     <script src="./js/gsap-animations.js" type="module"></script>

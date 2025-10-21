@@ -1,0 +1,85 @@
+# Portfolio .gitignore
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies (if using npm/yarn for any tooling)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build outputs (if you add build process later)
+dist/
+build/
+*.min.js
+*.min.css
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Backup files
+*.bak
+*.backup
+
+# Large files to avoid
+*.psd
+*.ai
+*.sketch
+*.fig
+
+# Personal notes (you might want to keep notes locally)
+NOTES.md
+TODO.txt
+drafts/
+
+# Optional: Uncomment if you want to keep work-in-progress images out of repo
+# assets/wip/
+# assets/originals/
+
+# Optional: Analytics or tracking files
+# analytics/
+
+# System files
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
