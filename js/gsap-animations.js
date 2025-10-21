@@ -262,41 +262,43 @@ function initSkillsAnimations() {
       scrollTrigger: {
         trigger: category,
         start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none none",
+        end: "bottom 10%",
+        // toggleActions: "play none none none",
       },
     });
 
     tl.fromTo(
       category,
-      { y: 50, opacity: 0, scale: 0.9 },
+      { x: -200, opacity: 0 },
       {
-        duration: 0.8,
-        y: 0,
-        opacity: 1,
+        x: 0,
         scale: 1,
-        ease: "power3.out",
+        opacity: 1,
+        duration: 0.8,
         delay: i * 0.1,
+        ease: "power3.inOut",
+        stagger: 0.3,
       }
     )
       .fromTo(
         icon,
-        { rotation: -180, scale: 0 },
+        { scale: 0, x: -240, opacity: 0 },
         {
-          duration: 0.6,
-          rotation: 0,
+          x: 0,
           scale: 1,
-          ease: "back.out(1.7)",
+          opacity: 1,
+          duration: 0.6,
+          ease: "back.in",
         },
         "-=0.6"
       )
       .fromTo(
         tags,
-        { x: -20, opacity: 0 },
+        { x: -260, opacity: 0 },
         {
-          duration: 0.4,
           x: 0,
           opacity: 1,
+          duration: 0.6,
           stagger: 0.05,
           ease: "power2.out",
         },
