@@ -263,7 +263,6 @@ function initSkillsAnimations() {
         trigger: category,
         start: "top 80%",
         end: "bottom 10%",
-        // toggleActions: "play none none none",
       },
     });
 
@@ -305,27 +304,41 @@ function initSkillsAnimations() {
         "-=0.3"
       );
   });
+}
 
-  // Hover animations for skill categories
-  // gsap.utils.toArray(".skill-category").forEach((category) => {
-  //   category.addEventListener("mouseenter", () => {
-  //     gsap.to(category, {
-  //       duration: 0.3,
-  //       y: -10,
-  //       scale: 1.02,
-  //       ease: "power2.out",
-  //     });
-  //   });
+function certificateAnimation() {
+  const certifications = document.getElementById("certifications");
 
-  //   category.addEventListener("mouseleave", () => {
-  //     gsap.to(category, {
-  //       duration: 0.3,
-  //       y: 0,
-  //       scale: 1,
-  //       ease: "power2.out",
-  //     });
-  //   });
-  // });
+  ScrollTrigger.create({
+    trigger: certifications,
+    start: "top 70%",
+    once: true,
+    onEnter: () => {
+      gsap.to("certifications-section", {
+        scale: 1,
+        opacity: 1,
+        duration: 1,
+        ease: "back.out(1)",
+      });
+
+      gsap.to(".certifications-title", {
+        delay: 0.5,
+        scale: 1,
+        opacity: 1,
+        duration: 1,
+        ease: "back.out(1.6)",
+      });
+
+      gsap.to(".certification-item", {
+        y: 0,
+        scale: 1,
+        duration: 1,
+        stagger: 0.5,
+        delay: 1,
+        ease: "sine.out(1.6)",
+      });
+    },
+  });
 }
 
 // Projects section animations
@@ -761,13 +774,13 @@ async function initAnimations() {
   // Basic setup
   gsap.config({ nullTargetWarn: false });
 
-  // Initialize all animation functions
   initLoadingAnimation();
   initNavbarAnimations();
   initHeroAnimations();
   initSectionAnimations();
   initAboutAnimations();
   initSkillsAnimations();
+  certificateAnimation();
   initProjectsAnimations();
   initContactAnimations();
   initFooterAnimations();
@@ -781,8 +794,6 @@ async function initAnimations() {
 
   // Refresh ScrollTrigger on load
   ScrollTrigger.refresh();
-
-  //   console.log("All GSAP animations initialized successfully!");
 }
 
 // Initialize when DOM is loaded
