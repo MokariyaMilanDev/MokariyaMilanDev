@@ -334,9 +334,15 @@ a {
 }
 
 .section-title {
-  font-size: 2.5rem;
   font-weight: 700;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
+  overflow: hidden;
+
+  & > .char {
+    transform: translateY(200px);
+    opacity: 0.5;
+  }
 }
 
 .section-subtitle {
@@ -872,30 +878,26 @@ a {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-rows: auto auto;
 }
 
 .testimonial-card {
-  border-radius: 1rem;
   padding: 2rem;
-  border: 2px solid var(--mode-primary-color);
-  transition: all var(--transition-base);
+  display: grid;
+  grid-row: span 2;
   position: relative;
+  border-radius: var(--size-4);
+  grid-template-rows: subgrid;
+  border: 2px solid var(--mode-primary-color);
 }
 
 .quote-icon {
   opacity: 0.2;
   top: 1.5rem;
   right: 1.5rem;
-  font-size: 2rem;
+  font-size: 2.4rem;
   position: absolute;
-  color: var(--accent-color);
-}
-
-.testimonial-text {
-  line-height: 1.7;
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  font-style: italic;
+  color: var(--mode-primary-color);
 }
 
 .testimonial-author {
@@ -1184,20 +1186,19 @@ a {
 #contact {
   color: var(--mode-primary-color);
   background: var(--mode-secondary-color);
+  overflow: hidden;
 }
 
 .contact {
   margin: 2rem 0;
   overflow: hidden;
-  border-radius: 2rem;
-  /* background: var(--secondary-color); */
-  /* border: 2px solid var(--accent-color); */
+  border-radius: var(--size-6);
 }
 
-.contact-content {
+.contact {
   display: grid;
-  grid-template-columns: 1fr minmax(400px, auto);
   min-height: 400px;
+  grid-template-columns: 1fr minmax(400px, auto);
 }
 
 .contact-info {
@@ -1231,10 +1232,6 @@ a {
   align-items: center;
   text-decoration: none;
   transition: transform 0.3s ease;
-}
-
-.contact-method:hover {
-  transform: translateX(5px);
 }
 
 .contact-icon {
@@ -1318,13 +1315,14 @@ a {
 .social-link {
   width: 50px;
   height: 50px;
+  scale: 0;
+  opacity: 0;
+  font-size: 1.25rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-size: 1.25rem;
-  transition: transform 0.3s ease;
   color: var(--mode-secondary-color);
   background: var(--mode-primary-color);
 }
@@ -1918,4 +1916,9 @@ body.loaded {
   .item-icon {
     margin: 0 auto;
   }
+}
+
+.github-stats {
+  scale: 0;
+  opacity: 0;
 }

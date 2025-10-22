@@ -125,45 +125,6 @@ function initHeroAnimations() {
     );
 }
 
-// Section reveal animations
-function initSectionAnimations() {
-  // Section headers
-  gsap.utils.toArray(".section-header").forEach((header) => {
-    const title = header.querySelector(".section-title");
-    const subtitle = header.querySelector(".section-subtitle");
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: header,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none none",
-      },
-    });
-
-    tl.fromTo(
-      title,
-      { y: 50, opacity: 0 },
-      {
-        duration: 0.8,
-        y: 0,
-        opacity: 1,
-        ease: "power3.out",
-      }
-    ).fromTo(
-      subtitle,
-      { y: 30, opacity: 0 },
-      {
-        duration: 0.6,
-        y: 0,
-        opacity: 1,
-        ease: "power3.out",
-      },
-      "-=0.4"
-    );
-  });
-}
-
 // About section animations
 function initAboutAnimations() {
   // Profile card animation
@@ -346,7 +307,7 @@ function infrastructureArchitectureAnimation() {
 
   ScrollTrigger.create({
     trigger: architectureDiagram,
-    start: "top 90%",
+    start: "top 95%",
     once: true,
     onEnter: () => {
       gsap.to(architectureDiagram, {
@@ -422,195 +383,94 @@ function initProjectsAnimations() {
         "-=0.2"
       );
   });
-
-  // Project card hover effects
-  // gsap.utils.toArray(".project-card").forEach((card) => {
-  //   card.addEventListener("mouseenter", () => {
-  //     gsap.to(card, {
-  //       duration: 0.4,
-  //       y: -10,
-  //       scale: 1.02,
-  //       rotationY: 5,
-  //       ease: "power2.out",
-  //     });
-  //   });
-
-  //   card.addEventListener("mouseleave", () => {
-  //     gsap.to(card, {
-  //       duration: 0.4,
-  //       y: 0,
-  //       scale: 1,
-  //       rotationY: 0,
-  //       ease: "power2.out",
-  //     });
-  //   });
-  // });
 }
 
 // Contact section animations
-function initContactAnimations() {
-  const contactContent = document.querySelector(".contact-content");
-  const contactMethods = document.querySelectorAll(".contact-method");
-  const contactForm = document.querySelector(".contact-form");
+function contactAnimations() {
+  const contactBox = document.querySelector(".contact");
 
-  if (contactContent) {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: contactContent,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none none",
-      },
-    });
-
-    tl.fromTo(
-      contactContent,
-      { scale: 0.9, opacity: 0 },
-      {
-        duration: 1,
-        scale: 1,
-        opacity: 1,
-        ease: "power3.out",
-      }
-    );
-  }
-
-  // Contact methods animation
-  contactMethods.forEach((method, i) => {
-    ScrollTrigger.create({
-      trigger: method,
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: contactBox,
       start: "top 80%",
+      end: "bottom 20%",
       once: true,
-      onEnter: () => {
-        gsap.fromTo(
-          method,
-          { x: -50, opacity: 0 },
-          {
-            duration: 0.8,
-            x: 0,
-            opacity: 1,
-            ease: "back.out(1.7)",
-            delay: i * 0.1,
-          }
-        );
-      },
-    });
-
-    // Hover effect
-    method.addEventListener("mouseenter", () => {
-      gsap.to(method, {
-        duration: 0.3,
-        x: 10,
-        scale: 1.05,
-        ease: "power2.out",
-      });
-    });
-
-    method.addEventListener("mouseleave", () => {
-      gsap.to(method, {
-        duration: 0.3,
-        x: 0,
-        scale: 1,
-        ease: "power2.out",
-      });
-    });
+    },
   });
 
-  // Contact form icon animation
-  if (contactForm) {
-    ScrollTrigger.create({
-      trigger: contactForm,
-      start: "top 80%",
-      once: true,
-      onEnter: () => {
-        gsap.fromTo(
-          contactForm.querySelector("i"),
-          {
-            rotation: -180,
-            scale: 0,
-            opacity: 0,
-          },
-          {
-            duration: 1.2,
-            rotation: 0,
-            scale: 1,
-            opacity: 1,
-            ease: "elastic.out(1, 0.5)",
-          }
-        );
-      },
-    });
-  }
+  tl.fromTo(
+    contactBox,
+    { x: -800 },
+    {
+      x: 0,
+      duration: 0.8,
+      ease: "back.out(1.6)",
+    }
+  );
+
+  tl.fromTo(
+    ".contact-form",
+    { x: 400 },
+    {
+      x: 0,
+      duration: 0.4,
+      ease: "back.out(1.4)",
+    }
+  );
+
+  // tl.fromTo(
+  //   contactBox,
+  //   { borderRadius: "0rem" },
+  //   {
+  //     duration: 0.6,
+  //     borderRadius: "1rem",
+  //     ease: "back.out(1.4)",
+  //   }
+  // );
+
+  tl.fromTo(
+    ".contact-method",
+    { opacity: 0, x: -200 },
+    {
+      x: 0,
+      opacity: 1,
+      stagger: 0.3,
+      duration: 0.6,
+      ease: "back.out(1.4)",
+    }
+  );
 }
 
 // Footer animations
 function initFooterAnimations() {
-  const socialLinks = document.querySelectorAll(".social-link");
-  const githubStats = document.querySelector(".github-stats img");
-
-  // Social links animation
-  socialLinks.forEach((link, i) => {
-    ScrollTrigger.create({
-      trigger: link,
-      start: "top 90%",
-      once: true,
-      onEnter: () => {
-        gsap.fromTo(
-          link,
-          { y: 30, opacity: 0, scale: 0 },
-          {
-            duration: 0.6,
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            ease: "back.out(1.7)",
-            delay: i * 0.1,
-          }
-        );
-      },
-    });
-
-    // Hover effect
-    link.addEventListener("mouseenter", () => {
-      gsap.to(link, {
-        duration: 0.1,
-        scale: 1.1,
-      });
-    });
-
-    link.addEventListener("mouseleave", () => {
-      gsap.to(link, {
-        duration: 0.1,
+  ScrollTrigger.create({
+    trigger: ".social-link",
+    start: "top 90%",
+    once: true,
+    onEnter: () => {
+      gsap.to(".social-link", {
         scale: 1,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 0.6,
+        ease: "back.out(1.7)",
       });
-    });
+    },
   });
 
-  // GitHub stats animation
-  if (githubStats) {
-    ScrollTrigger.create({
-      trigger: githubStats,
-      start: "top 90%",
-      once: true,
-      onEnter: () => {
-        gsap.fromTo(
-          githubStats,
-          {
-            scale: 0.8,
-            opacity: 0,
-            rotationY: 90,
-          },
-          {
-            duration: 1,
-            scale: 1,
-            opacity: 1,
-            rotationY: 0,
-            ease: "power3.out",
-          }
-        );
-      },
-    });
-  }
+  ScrollTrigger.create({
+    trigger: ".github-stats",
+    start: "top 90%",
+    once: true,
+    onEnter: () => {
+      gsap.to(".github-stats", {
+        scale: 1,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+      });
+    },
+  });
 }
 
 // Cursor animations (enhanced)
@@ -722,25 +582,17 @@ function initTextAnimations() {
   gsap.utils.toArray(".section-title .char").forEach((char, i) => {
     ScrollTrigger.create({
       trigger: char.closest(".section-title"),
-      start: "top 80%",
+      start: "top 90%",
       once: true,
       onEnter: () => {
-        gsap.fromTo(
-          char,
-          {
-            y: 100,
-            opacity: 0,
-            rotationX: 90,
-          },
-          {
-            duration: 0.8,
-            y: 0,
-            opacity: 1,
-            rotationX: 0,
-            ease: "back.out(1.7)",
-            delay: i * 0.03,
-          }
-        );
+        gsap.to(char, {
+          y: 0,
+          opacity: 1,
+          rotationX: 0,
+          duration: 0.8,
+          ease: "back.out(1.7)",
+          delay: i * 0.03,
+        });
       },
     });
   });
@@ -795,17 +647,16 @@ async function initAnimations() {
   initLoadingAnimation();
   initNavbarAnimations();
   initHeroAnimations();
-  initSectionAnimations();
   initAboutAnimations();
   initSkillsAnimations();
   certificateAnimation();
   infrastructureArchitectureAnimation();
   initProjectsAnimations();
-  initContactAnimations();
   initFooterAnimations();
   initCursorAnimations();
   initScrollAnimations();
   initTextAnimations();
+  contactAnimations();
 
   // Handle responsive
   handleResponsiveAnimations();
