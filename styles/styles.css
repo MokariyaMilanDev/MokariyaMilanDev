@@ -341,7 +341,6 @@ a {
 
 .section-subtitle {
   font-size: 1.125rem;
-  color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -590,7 +589,6 @@ a {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.95rem;
-  color: var(--text-secondary);
 }
 
 .legend-badge {
@@ -629,63 +627,15 @@ a {
 
 .architecture-card {
   background: var(--bg-card);
-  border-radius: 1rem;
-  padding: 2rem;
+  border-radius: var(--size-4);
   border: 2px solid var(--border-color);
   box-shadow: var(--shadow-lg);
 }
 
-.card-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.card-header i {
-  font-size: 2rem;
-  color: var(--accent-color);
-}
-
-.card-header h3 {
-  font-size: 1.5rem;
-  color: var(--text-primary);
-}
-
 .architecture-diagram {
-  min-height: 400px;
-  background: var(--bg-section);
+  width: 100%;
   border-radius: 0.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.diagram-placeholder {
-  text-align: center;
-  padding: 3rem;
-}
-
-.diagram-placeholder i {
-  font-size: 5rem;
-  color: var(--accent-color);
-  opacity: 0.5;
-  margin-bottom: 1rem;
-}
-
-.diagram-placeholder p {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
-}
-
-.diagram-note {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--text-light);
-  font-style: italic;
-  max-width: 500px;
-  margin: 0 auto;
+  scale: 0;
 }
 
 /* DevOps Grid */
@@ -715,7 +665,6 @@ a {
 }
 
 .devops-card h3 {
-  color: var(--text-primary);
   margin-bottom: 1rem;
   font-size: 1.25rem;
 }
@@ -728,7 +677,6 @@ a {
 
 .devops-list li {
   padding: 0.5rem 0;
-  color: var(--text-secondary);
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
@@ -1729,7 +1677,6 @@ body.loaded {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: var(--text-secondary);
 }
 
 .objective-list li i {
@@ -1879,7 +1826,6 @@ body.loaded {
 }
 
 .project-contributions h4 {
-  color: var(--text-primary);
   margin-bottom: 0.75rem;
   font-size: 1rem;
 }
@@ -1891,7 +1837,6 @@ body.loaded {
 
 .project-contributions li {
   padding: 0.5rem 0;
-  color: var(--text-secondary);
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;

@@ -15,6 +15,13 @@
   --size-5: 1.5em;
   --size-6: 1.75em;
 
+  --fs-100: calc(var(--size-1) + 0.25vw);
+  --fs-200: calc(var(--size-2) + 0.5vw);
+  --fs-300: calc(var(--size-3) + 0.75vw);
+  --fs-400: calc(var(--size-4) + 1vw);
+  --fs-500: calc(var(--size-5) + 1.5vw);
+  --fs-600: calc(var(--size-6) + 1.75vw);
+
   --transition-fast: 0.15s ease;
   --transition-base: 0.3s ease;
   --transition-slow: 0.5s ease;
@@ -1126,81 +1133,60 @@
 }
 
 /* Font Weight */
-.font-thin {
+.fw-100 {
   font-weight: 100;
 }
 
-.font-extralight {
+.fw-200 {
   font-weight: 200;
 }
 
-.font-light {
+.fw-300 {
   font-weight: 300;
 }
 
-.font-normal {
+.fw-400 {
   font-weight: 400;
 }
 
-.font-medium {
+.fw-500 {
   font-weight: 500;
 }
 
-.font-semibold {
+.fw-600 {
   font-weight: 600;
 }
 
-.font-bold {
+.fw-700 {
   font-weight: 700;
 }
 
-.font-extrabold {
+.fw-800 {
   font-weight: 800;
 }
 
-.font-black {
+.fw-900 {
   font-weight: 900;
 }
 
 /* Font Size */
-.text-xs {
-  font-size: 0.75rem;
+.fs-100 {
+  font-size: var(--fs-100);
 }
-
-.text-sm {
-  font-size: 0.875rem;
+.fs-200 {
+  font-size: var(--fs-200);
 }
-
-.text-base {
-  font-size: 1rem;
+.fs-300 {
+  font-size: var(--fs-300);
 }
-
-.text-lg {
-  font-size: 1.125rem;
+.fs-400 {
+  font-size: var(--fs-400);
 }
-
-.text-xl {
-  font-size: 1.25rem;
+.fs-500 {
+  font-size: var(--fs-500);
 }
-
-.text-2xl {
-  font-size: 1.5rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
+.fs-600 {
+  font-size: var(--fs-600);
 }
 
 /* Text Transform */

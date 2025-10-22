@@ -314,7 +314,7 @@ function certificateAnimation() {
     start: "top 70%",
     once: true,
     onEnter: () => {
-      gsap.to("certifications-section", {
+      gsap.to(".certifications-section", {
         scale: 1,
         opacity: 1,
         duration: 1,
@@ -336,6 +336,24 @@ function certificateAnimation() {
         stagger: 0.5,
         delay: 1,
         ease: "sine.out(1.6)",
+      });
+    },
+  });
+}
+
+function infrastructureArchitectureAnimation() {
+  const architectureDiagram = document.querySelector(".architecture-diagram");
+
+  ScrollTrigger.create({
+    trigger: architectureDiagram,
+    start: "top 90%",
+    once: true,
+    onEnter: () => {
+      gsap.to(architectureDiagram, {
+        scale: 1,
+        opacity: 1,
+        duration: 0.6,
+        ease: "back.out(1.6)",
       });
     },
   });
@@ -781,6 +799,7 @@ async function initAnimations() {
   initAboutAnimations();
   initSkillsAnimations();
   certificateAnimation();
+  infrastructureArchitectureAnimation();
   initProjectsAnimations();
   initContactAnimations();
   initFooterAnimations();

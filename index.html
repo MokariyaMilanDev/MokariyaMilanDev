@@ -511,22 +511,16 @@
 
         <div class="devops-content">
           <!-- Architecture Overview -->
-          <div class="architecture-card">
-            <div class="card-header">
-              <i class="fas fa-project-diagram"></i>
-              <h3>Infrastructure Architecture</h3>
+          <div class="architecture-card | grid g-4">
+            <div class="card-header | g-4 flex items-center justify-center">
+              <i class="fas fa-project-diagram | clr-accent fs-400"></i>
+              <h3 class="fs-300">Infrastructure Architecture</h3>
             </div>
-            <div class="architecture-diagram">
-              <!-- Placeholder for architecture diagram -->
-              <div class="diagram-placeholder">
-                <i class="fas fa-sitemap"></i>
-                <p>[Architecture Diagram Placeholder]</p>
-                <span class="diagram-note"
-                  >Replace with your actual infrastructure diagram showing K8s
-                  clusters, microservices, load balancers, etc.</span
-                >
-              </div>
-            </div>
+            <img
+              src="./assets/projects/k8s_diagram.png"
+              class="architecture-diagram"
+              alt="architecture-diagram"
+            />
           </div>
 
           <!-- DevOps Stack Grid -->
@@ -667,7 +661,7 @@
                 <div class="achievement-icon">
                   <i class="fas fa-users"></i>
                 </div>
-                <h4>Scaled to handle [10k+] concurrent users</h4>
+                <h4>Scaled to handle 2k+ concurrent users</h4>
                 <p>
                   Configured K8s auto-scaling and optimized resource allocation
                 </p>
@@ -683,7 +677,7 @@
                 <div class="achievement-icon">
                   <i class="fas fa-dollar-sign"></i>
                 </div>
-                <h4>[Cost optimization achievement placeholder]</h4>
+                <h4>Cost optimization</h4>
                 <p>
                   Reduced infrastructure costs through efficient resource
                   management
