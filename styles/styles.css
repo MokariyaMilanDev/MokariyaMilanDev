@@ -1113,14 +1113,23 @@ a {
 
 .roadmap-content {
   display: flex;
+  overflow: hidden;
   flex-direction: column;
-  gap: 3rem;
+  gap: var(--size-6);
 }
 
 .roadmap-category {
-  padding: 2rem;
-  border-radius: 1rem;
+  padding: var(--size-6);
+  border-radius: var(--size-4);
   border: 2px solid var(--mode-primary-color);
+
+  &:nth-child(odd) {
+    transform: translateX(-1400px);
+  }
+
+  &:nth-child(even) {
+    transform: translateX(1400px);
+  }
 }
 
 .category-header {

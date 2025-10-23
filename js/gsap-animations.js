@@ -406,6 +406,26 @@ function testimonialsAnimation() {
   });
 }
 
+function roadMapAnimation() {
+  const roadMap = document.querySelectorAll(".roadmap-category");
+
+  roadMap.forEach((section) => {
+    ScrollTrigger.create({
+      once: true,
+      start: "top 60%",
+      trigger: section,
+      onEnter: () => {
+        gsap.to(".roadmap-category", {
+          x: 0,
+          scale: 1,
+          duration: 1,
+          ease: "sine.out(1.6)",
+        });
+      },
+    });
+  });
+}
+
 // Projects section animations
 function initProjectsAnimations() {
   gsap.utils.toArray(".project-card").forEach((card, i) => {
@@ -739,6 +759,7 @@ async function initAnimations() {
   infrastructureArchitectureAnimation();
   achievementsAnimation();
   testimonialsAnimation();
+  roadMapAnimation();
   initProjectsAnimations();
   initFooterAnimations();
   initCursorAnimations();
