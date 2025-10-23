@@ -821,6 +821,28 @@ a {
   transition: transform 0.3s ease;
 }
 
+.project-card.featured {
+  grid-column: span 2;
+
+  &::before {
+    content: "★ Featured Project";
+    position: absolute;
+    top: var(--size-4);
+    right: var(--size-4);
+    padding: var(--size-2) var(--size-4);
+    background: var(--accent-color);
+    color: var(--secondary-color);
+    border-radius: 50vh;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card.featured {
+    grid-column: span 1;
+  }
+}
+
 .project-image {
   height: 200px;
   display: flex;
@@ -1706,18 +1728,6 @@ body.loaded {
   }
 } */
 
-/* Enhanced Projects Section */
-.project-card.featured {
-  grid-column: span 2;
-  position: relative;
-}
-
-@media (max-width: 768px) {
-  .project-card.featured {
-    grid-column: span 1;
-  }
-}
-
 .featured-badge {
   position: absolute;
   top: 1rem;
@@ -1743,10 +1753,6 @@ body.loaded {
   height: 100%;
   object-fit: cover;
   transition: transform var(--transition-slow);
-}
-
-.project-card:hover .project-screenshot img {
-  transform: scale(1.05);
 }
 
 .screenshot-placeholder {
