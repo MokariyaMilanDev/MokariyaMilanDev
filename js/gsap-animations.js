@@ -352,6 +352,41 @@ function infrastructureArchitectureAnimation() {
   });
 }
 
+function achievementsAnimation() {
+  const achievements = document.querySelectorAll(".devops-achievements");
+
+  ScrollTrigger.create({
+    once: true,
+    start: "top 90%",
+    trigger: achievements,
+    onEnter: () => {
+      gsap.to(".devops-achievements", {
+        scale: 1,
+        opacity: 1,
+        duration: 1,
+        ease: "back.out(1)",
+      });
+
+      gsap.to(".achievements-title", {
+        scale: 1,
+        delay: 1,
+        opacity: 1,
+        duration: 1,
+        ease: "back.out(1.6)",
+      });
+
+      gsap.to(".achievement-item", {
+        y: 0,
+        scale: 1,
+        duration: 1,
+        stagger: 0.5,
+        delay: 1,
+        ease: "sine.out(1.6)",
+      });
+    },
+  });
+}
+
 // Projects section animations
 function initProjectsAnimations() {
   gsap.utils.toArray(".project-card").forEach((card, i) => {
@@ -683,6 +718,7 @@ async function initAnimations() {
   initSkillsAnimations();
   certificateAnimation();
   infrastructureArchitectureAnimation();
+  achievementsAnimation();
   initProjectsAnimations();
   initFooterAnimations();
   initCursorAnimations();
