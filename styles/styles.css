@@ -878,6 +878,7 @@ a {
   gap: 2rem;
   margin-top: 2rem;
   display: grid;
+  overflow: hidden;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-template-rows: auto auto;
 }
@@ -890,6 +891,7 @@ a {
   border-radius: var(--size-4);
   grid-template-rows: subgrid;
   border: 2px solid var(--mode-primary-color);
+  scale: 0;
 }
 
 .quote-icon {

@@ -387,6 +387,25 @@ function achievementsAnimation() {
   });
 }
 
+function testimonialsAnimation() {
+  const testimonials = document.querySelectorAll(".testimonials-section");
+
+  ScrollTrigger.create({
+    once: true,
+    start: "top 90%",
+    trigger: testimonials,
+    onEnter: () => {
+      gsap.to(".testimonial-card", {
+        y: 0,
+        scale: 1,
+        duration: 1,
+        stagger: 0.5,
+        ease: "sine.out(1.6)",
+      });
+    },
+  });
+}
+
 // Projects section animations
 function initProjectsAnimations() {
   gsap.utils.toArray(".project-card").forEach((card, i) => {
@@ -719,6 +738,7 @@ async function initAnimations() {
   certificateAnimation();
   infrastructureArchitectureAnimation();
   achievementsAnimation();
+  testimonialsAnimation();
   initProjectsAnimations();
   initFooterAnimations();
   initCursorAnimations();
