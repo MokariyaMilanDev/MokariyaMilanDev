@@ -318,6 +318,38 @@ function infrastructureArchitectureAnimation() {
       });
     },
   });
+
+  const cards = document.querySelectorAll(".devops-card");
+
+  ScrollTrigger.create({
+    trigger: cards,
+    start: "top 80%",
+    once: true,
+    onEnter: () => {
+      gsap.to(".devops-card", {
+        scale: 1,
+        duration: 1,
+        stagger: 0.6,
+        ease: "back.out(1.6)",
+      });
+    },
+  });
+
+  const stackBadge = document.querySelectorAll(".stack-badge");
+
+  ScrollTrigger.create({
+    trigger: stackBadge,
+    start: "top 90%",
+    once: true,
+    onEnter: () => {
+      gsap.to(stackBadge, {
+        y: 0,
+        duration: 1,
+        stagger: 0.4,
+        ease: "back.out(1.6)",
+      });
+    },
+  });
 }
 
 // Projects section animations
