@@ -514,15 +514,12 @@ a {
 
 /*? Certifications Section */
 .certifications-section {
-  opacity: 0;
   padding: 2rem;
   margin-top: 4rem;
   border-radius: 1rem;
   color: var(--mode-secondary-color);
   background: var(--mode-primary-color);
   border: 2px solid var(--mode-secondary-color);
-  transform: scale(0);
-  opacity: 0;
 }
 
 .certifications-title {
@@ -533,8 +530,6 @@ a {
   justify-content: center;
   text-align: center;
   gap: var(--size-2);
-  transform: scale(0);
-  opacity: 0;
 }
 
 .certifications-grid {
@@ -549,7 +544,6 @@ a {
   padding: 2rem 1.5rem;
   border-radius: 0.75rem;
   border: 2px solid var(--mode-secondary-color);
-  transform: scale(0);
 }
 
 .certification-item i {
@@ -775,10 +769,7 @@ a {
 }
 
 .achievement-item {
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  transition: all var(--transition-base);
-  transform: translateY(-300px);
+  padding: var(--size-4);
 }
 
 .achievement-icon {
@@ -1520,15 +1511,6 @@ a {
 .animate-out {
   opacity: 0;
   transform: translateY(30px);
-}
-
-/* Loading State */
-body {
-  opacity: 0;
-}
-
-body.loaded {
-  opacity: 1;
 }
 
 /* Disable animations for users who prefer reduced motion */

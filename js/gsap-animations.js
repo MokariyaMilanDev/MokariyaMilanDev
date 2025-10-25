@@ -275,29 +275,50 @@ function certificateAnimation() {
     start: "top 70%",
     once: true,
     onEnter: () => {
-      gsap.to(".certifications-section", {
-        scale: 1,
-        opacity: 1,
-        duration: 1,
-        ease: "back.out(1)",
-      });
+      gsap.fromTo(
+        ".certifications-section",
+        {
+          scale: 0,
+          opacity: 0,
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1,
+          ease: "back.out(1)",
+        }
+      );
 
-      gsap.to(".certifications-title", {
-        delay: 0.5,
-        scale: 1,
-        opacity: 1,
-        duration: 1,
-        ease: "back.out(1.6)",
-      });
+      gsap.fromTo(
+        ".certifications-title",
+        {
+          scale: 0,
+          opacity: 0,
+        },
+        {
+          delay: 0.5,
+          scale: 1,
+          opacity: 1,
+          duration: 1,
+          ease: "back.out(1.6)",
+        }
+      );
 
-      gsap.to(".certification-item", {
-        y: 0,
-        scale: 1,
-        duration: 1,
-        stagger: 0.5,
-        delay: 1,
-        ease: "sine.out(1.6)",
-      });
+      gsap.fromTo(
+        ".certification-item",
+        {
+          y: 30,
+          scale: 0,
+        },
+        {
+          y: 0,
+          scale: 1,
+          duration: 0.5,
+          stagger: 0.5,
+          delay: 1,
+          ease: "sine.out(1.6)",
+        }
+      );
     },
   });
 }
@@ -375,14 +396,19 @@ function achievementsAnimation() {
         ease: "back.out(1.6)",
       });
 
-      gsap.to(".achievement-item", {
-        y: 0,
-        scale: 1,
-        duration: 1,
-        stagger: 0.5,
-        delay: 1,
-        ease: "sine.out(1.6)",
-      });
+      gsap.fromTo(
+        ".achievement-item",
+        {
+          y: -300,
+        },
+        {
+          y: 0,
+          delay: 1,
+          duration: 1,
+          stagger: 0.5,
+          ease: "sine.out(1.6)",
+        }
+      );
     },
   });
 }
