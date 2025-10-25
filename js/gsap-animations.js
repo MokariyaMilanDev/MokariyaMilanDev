@@ -29,6 +29,39 @@ function initLoadingAnimation() {
   );
 }
 
+const splitTypeElements = document.querySelectorAll("[text-split]");
+splitTypeElements.forEach((splitTypeElement) => {
+  const text = splitTypeElement.textContent;
+  splitTypeElement.innerHTML = text
+    .split("")
+    .map((char) => (char === " " ? " " : `<span class="char">${char}</span>`))
+    .join("");
+});
+
+const lettersFadeInRandomElements = document.querySelectorAll(
+  "[letters-fade-in-random]"
+);
+lettersFadeInRandomElements.forEach((element) => {
+  const tl = gsap.timeline({ paused: true });
+  const chars = element.querySelectorAll(".char");
+  if (!chars || chars.length === 0) return;
+
+  tl.from(chars, {
+    opacity: 0,
+    duration: 0.8,
+    ease: "power1.out",
+    stagger: { amount: 0.4, from: "random" },
+  });
+
+  // Properly create a ScrollTrigger that controls the timeline
+  ScrollTrigger.create({
+    trigger: element,
+    animation: tl,
+    start: "top 90%",
+    once: true,
+  });
+});
+
 // Navigation animations
 function initNavbarAnimations() {
   // Navbar scroll effect
