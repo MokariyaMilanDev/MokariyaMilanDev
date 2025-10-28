@@ -1285,22 +1285,10 @@
       })();
     </script>
 
-    <!-- GSAP Library - Deferred loading with async -->
-    <script
-      defer
-      async
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-    ></script>
-    <script
-      defer
-      async
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
-    ></script>
-    <script
-      defer
-      async
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"
-    ></script>
+    <!-- GSAP Library - Load synchronously in order -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
 
     <!-- Application Scripts - Deferred and optimized loading -->
     <script defer src="./js/theme-toggle.js"></script>
