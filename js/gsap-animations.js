@@ -10,25 +10,6 @@ function initGSAP() {
   return false;
 }
 
-// Loading animation
-function initLoadingAnimation() {
-  const tl = gsap.timeline();
-
-  tl.to("body", {
-    duration: 0.5,
-    opacity: 1,
-  }).to(
-    ".navbar",
-    {
-      duration: 0.8,
-      opacity: 1,
-      y: 0,
-      ease: "power2.out",
-    },
-    "+=0.2"
-  );
-}
-
 const splitTypeElements = document.querySelectorAll("[text-split]");
 splitTypeElements.forEach((splitTypeElement) => {
   const text = splitTypeElement.textContent;
@@ -161,143 +142,164 @@ function initHeroAnimations() {
 // About section animations
 function initAboutAnimations() {
   // Profile card animation
-  ScrollTrigger.create({
-    trigger: ".profile-card",
-    start: "top 80%",
-    once: true,
-    onEnter: () => {
-      gsap.fromTo(
-        ".profile-card",
-        {
-          scale: 0.8,
-          rotation: -10,
-          opacity: 0,
-        },
-        {
-          duration: 1,
-          scale: 1,
-          rotation: -2,
-          opacity: 1,
-          ease: "back.out(1.7)",
-        }
-      );
-    },
-  });
-
-  // About text animation
-  gsap.utils.toArray(".about-text p").forEach((p, i) => {
-    gsap.fromTo(
-      p,
-      { x: 50, opacity: 0 },
-      {
-        duration: 0.8,
-        x: 0,
-        opacity: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: p,
-          start: "top 80%",
-          delay: i * 0.2,
-        },
-      }
-    );
-  });
-
-  // Stats animation
-  gsap.utils.toArray(".stat-item").forEach((stat, i) => {
-    const number = stat.querySelector(".stat-number");
-
+  const profileCard = document.querySelector(".profile-card");
+  if (profileCard.isConnected) {
     ScrollTrigger.create({
-      trigger: stat,
-      start: "top 80%",
       once: true,
+      start: "top 80%",
+      trigger: profileCard,
       onEnter: () => {
         gsap.fromTo(
-          stat,
-          { y: 30, opacity: 0, scale: 0.8 },
+          profileCard,
           {
-            duration: 0.6,
-            y: 0,
-            opacity: 1,
+            scale: 0.8,
+            rotation: -10,
+            opacity: 0,
+          },
+          {
+            duration: 1,
             scale: 1,
+            rotation: -2,
+            opacity: 1,
             ease: "back.out(1.7)",
-            delay: i * 0.1,
           }
         );
-
-        // Animate the number counting
-        const finalNumber = number.textContent;
-        const numericValue = parseInt(finalNumber);
-        if (!isNaN(numericValue)) {
-          gsap.fromTo(
-            number,
-            { textContent: 0 },
-            {
-              duration: 2,
-              textContent: numericValue,
-              roundProps: "textContent",
-              ease: "power2.out",
-              delay: i * 0.1 + 0.3,
-            }
-          );
-        }
       },
     });
-  });
+  }
+
+  // About text animation
+  const aboutTextElements = gsap.utils.toArray(".about-text p");
+  if (aboutTextElements.length > 0) {
+    aboutTextElements.forEach((p, i) => {
+      gsap.fromTo(
+        p,
+        { x: 50, opacity: 0 },
+        {
+          duration: 0.8,
+          x: 0,
+          opacity: 1,
+          ease: "power3.out",
+          delay: i * 0.2,
+          scrollTrigger: {
+            trigger: p,
+            start: "top 80%",
+            once: true,
+          },
+        }
+      );
+    });
+  }
+
+  // Stats animation
+  const statItems = gsap.utils.toArray(".stat-item");
+  if (statItems.length > 0) {
+    statItems.forEach((stat, i) => {
+      const number = stat.querySelector(".stat-number");
+
+      ScrollTrigger.create({
+        trigger: stat,
+        start: "top 80%",
+        once: true,
+        onEnter: () => {
+          gsap.fromTo(
+            stat,
+            { y: 30, opacity: 0, scale: 0.8 },
+            {
+              duration: 0.6,
+              y: 0,
+              opacity: 1,
+              scale: 1,
+              ease: "back.out(1.7)",
+              delay: i * 0.1,
+            }
+          );
+
+          // Animate the number counting
+          if (number) {
+            const finalNumber = number.textContent;
+            const numericValue = parseInt(finalNumber);
+            if (!isNaN(numericValue)) {
+              gsap.fromTo(
+                number,
+                { textContent: 0 },
+                {
+                  duration: 2,
+                  textContent: numericValue,
+                  roundProps: "textContent",
+                  ease: "power2.out",
+                  delay: i * 0.1 + 0.3,
+                }
+              );
+            }
+          }
+        },
+      });
+    });
+  }
 }
 
 // Skills section animations
 function initSkillsAnimations() {
-  gsap.utils.toArray(".skill-category").forEach((category, i) => {
-    const icon = category.querySelector(".skill-icon");
-    const tags = category.querySelectorAll(".skill-tag");
+  const skillCategories = gsap.utils.toArray(".skill-category");
+  if (skillCategories.length > 0) {
+    skillCategories.forEach((category, i) => {
+      const icon = category.querySelector(".skill-icon");
+      const tags = category.querySelectorAll(".skill-tag");
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: category,
-        start: "top 80%",
-        end: "bottom 10%",
-      },
-    });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: category,
+          start: "top 80%",
+          once: true,
+        },
+      });
 
-    tl.fromTo(
-      category,
-      { x: -200, opacity: 0 },
-      {
-        x: 0,
-        scale: 1,
-        opacity: 1,
-        duration: 0.8,
-        delay: i * 0.1,
-        ease: "power3.inOut",
-        stagger: 0.3,
-      }
-    )
-      .fromTo(
-        icon,
-        { scale: 0, x: -240, opacity: 0 },
+      tl.fromTo(
+        category,
+        { x: -200, opacity: 0 },
         {
           x: 0,
           scale: 1,
           opacity: 1,
-          duration: 0.6,
-          ease: "back.in",
-        },
-        "-=0.6"
-      )
-      .fromTo(
-        tags,
-        { x: -260, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.6,
-          stagger: 0.05,
-          ease: "power2.out",
-        },
-        "-=0.3"
+          duration: 0.8,
+          delay: i * 0.1,
+          ease: "power3.inOut",
+          stagger: 0.3,
+        }
       );
-  });
+
+      if (icon) {
+        tl.fromTo(
+          icon,
+          { scale: 0, x: -240, opacity: 0 },
+          {
+            x: 0,
+            scale: 1,
+            opacity: 1,
+            duration: 0.6,
+            ease: "back.in",
+          },
+          "-=0.6"
+        );
+      }
+
+      if (tags.length > 0) {
+        tl.fromTo(
+          tags,
+          { x: -260, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.05,
+            ease: "power2.out",
+          },
+          "-=0.3"
+        );
+      }
+    });
+  }
 }
 
 function certificateAnimation() {
@@ -364,12 +366,19 @@ function infrastructureArchitectureAnimation() {
     start: "top 95%",
     once: true,
     onEnter: () => {
-      gsap.to(architectureDiagram, {
-        scale: 1,
-        opacity: 1,
-        duration: 0.6,
-        ease: "back.out(1.6)",
-      });
+      gsap.fromTo(
+        architectureDiagram,
+        {
+          scale: 0,
+          opacity: 0,
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.6,
+          ease: "back.out(1.6)",
+        }
+      );
     },
   });
 
@@ -380,12 +389,20 @@ function infrastructureArchitectureAnimation() {
     start: "top 80%",
     once: true,
     onEnter: () => {
-      gsap.to(".devops-card", {
-        scale: 1,
-        duration: 1,
-        stagger: 0.6,
-        ease: "back.out(1.6)",
-      });
+      gsap.fromTo(
+        cards,
+        {
+          scale: 0,
+          opacity: 0,
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.6,
+          ease: "back.out(1.6)",
+        }
+      );
     },
   });
 
@@ -396,12 +413,18 @@ function infrastructureArchitectureAnimation() {
     start: "top 90%",
     once: true,
     onEnter: () => {
-      gsap.to(stackBadge, {
-        y: 0,
-        duration: 1,
-        stagger: 0.4,
-        ease: "back.out(1.6)",
-      });
+      gsap.fromTo(
+        stackBadge,
+        {
+          y: -200,
+        },
+        {
+          y: 0,
+          duration: 1,
+          stagger: 0.4,
+          ease: "back.out(1.6)",
+        }
+      );
     },
   });
 }
@@ -414,20 +437,34 @@ function achievementsAnimation() {
     start: "top 90%",
     trigger: achievements,
     onEnter: () => {
-      gsap.to(".devops-achievements", {
-        scale: 1,
-        opacity: 1,
-        duration: 1,
-        ease: "back.out(1)",
-      });
+      gsap.fromTo(
+        ".devops-achievements",
+        {
+          scale: 0,
+          opacity: 0,
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1,
+          ease: "back.out(1)",
+        }
+      );
 
-      gsap.to(".achievements-title", {
-        scale: 1,
-        delay: 1,
-        opacity: 1,
-        duration: 1,
-        ease: "back.out(1.6)",
-      });
+      gsap.fromTo(
+        ".achievements-title",
+        {
+          scale: 0,
+          opacity: 0,
+        },
+        {
+          scale: 1,
+          delay: 1,
+          opacity: 1,
+          duration: 1,
+          ease: "back.out(1.6)",
+        }
+      );
 
       gsap.fromTo(
         ".achievement-item",
@@ -454,13 +491,18 @@ function testimonialsAnimation() {
     start: "top 90%",
     trigger: testimonials,
     onEnter: () => {
-      gsap.to(".testimonial-card", {
-        y: 0,
-        scale: 1,
-        duration: 1,
-        stagger: 0.5,
-        ease: "sine.out(1.6)",
-      });
+      gsap.fromTo(
+        ".testimonial-card",
+        {
+          scale: 0,
+        },
+        {
+          scale: 1,
+          duration: 1,
+          stagger: 0.5,
+          ease: "sine.out(1.6)",
+        }
+      );
     },
   });
 }
@@ -468,18 +510,23 @@ function testimonialsAnimation() {
 function roadMapAnimation() {
   const roadMap = document.querySelectorAll(".roadmap-category");
 
-  roadMap.forEach((section) => {
+  roadMap.forEach((section, i) => {
     ScrollTrigger.create({
       once: true,
-      start: "top 60%",
+      start: "top 90%",
       trigger: section,
       onEnter: () => {
-        gsap.to(".roadmap-category", {
-          x: 0,
-          scale: 1,
-          duration: 1,
-          ease: "sine.out(1.6)",
-        });
+        gsap.fromTo(
+          roadMap[i],
+          {
+            x: -1400,
+          },
+          {
+            x: 0,
+            duration: 1,
+            ease: "sine.out(1.6)",
+          }
+        );
       },
     });
   });
@@ -487,67 +534,79 @@ function roadMapAnimation() {
 
 // Projects section animations
 function initProjectsAnimations() {
-  gsap.utils.toArray(".project-card").forEach((card, i) => {
-    const image = card.querySelector(".project-image");
-    const content = card.querySelector(".project-content");
-    const links = card.querySelectorAll(".project-link");
+  const projectCards = gsap.utils.toArray(".project-card");
+  if (projectCards.length > 0) {
+    projectCards.forEach((card, i) => {
+      const image = card.querySelector(".project-image");
+      const content = card.querySelector(".project-content");
+      const links = card.querySelectorAll(".project-link");
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: card,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none none",
-      },
-    });
-
-    tl.fromTo(
-      card,
-      { y: 60, opacity: 0, rotationY: 15 },
-      {
-        duration: 1,
-        y: 0,
-        opacity: 1,
-        rotationY: 0,
-        ease: "power3.out",
-        delay: i * 0.2,
-      }
-    )
-      .fromTo(
-        image,
-        { scale: 1.2, opacity: 0 },
-        {
-          duration: 0.8,
-          scale: 1,
-          opacity: 1,
-          ease: "power2.out",
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: card,
+          start: "top 80%",
+          toggleActions: "play none none none",
+          once: true,
         },
-        "-=0.8"
-      )
-      .fromTo(
-        content,
-        { y: 30, opacity: 0 },
+      });
+
+      tl.fromTo(
+        card,
+        { y: 60, opacity: 0, rotationY: 15 },
         {
-          duration: 0.6,
+          duration: 1,
           y: 0,
           opacity: 1,
-          ease: "power2.out",
-        },
-        "-=0.4"
-      )
-      .fromTo(
-        links,
-        { x: -20, opacity: 0 },
-        {
-          duration: 0.4,
-          x: 0,
-          opacity: 1,
-          stagger: 0.1,
-          ease: "power2.out",
-        },
-        "-=0.2"
+          rotationY: 0,
+          ease: "power3.out",
+          delay: i * 0.2,
+        }
       );
-  });
+
+      if (image) {
+        tl.fromTo(
+          image,
+          { scale: 1.2, opacity: 0 },
+          {
+            duration: 0.8,
+            scale: 1,
+            opacity: 1,
+            ease: "power2.out",
+          },
+          "-=0.8"
+        );
+      }
+
+      if (content) {
+        tl.fromTo(
+          content,
+          { y: 30, opacity: 0 },
+          {
+            duration: 0.6,
+            y: 0,
+            opacity: 1,
+            ease: "power2.out",
+          },
+          "-=0.4"
+        );
+      }
+
+      if (links.length > 0) {
+        tl.fromTo(
+          links,
+          { x: -20, opacity: 0 },
+          {
+            duration: 0.4,
+            x: 0,
+            opacity: 1,
+            stagger: 0.1,
+            ease: "power2.out",
+          },
+          "-=0.2"
+        );
+      }
+    });
+  }
 }
 
 // Contact section animations
@@ -558,7 +617,6 @@ function contactAnimations() {
     scrollTrigger: {
       trigger: contactBox,
       start: "top 80%",
-      end: "bottom 20%",
       once: true,
     },
   });
@@ -613,13 +671,20 @@ function initFooterAnimations() {
     start: "top 90%",
     once: true,
     onEnter: () => {
-      gsap.to(".social-link", {
-        scale: 1,
-        opacity: 1,
-        stagger: 0.2,
-        duration: 0.6,
-        ease: "back.out(1.7)",
-      });
+      gsap.fromTo(
+        ".social-link",
+        {
+          scale: 0,
+          opacity: 0,
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          stagger: 0.2,
+          duration: 0.6,
+          ease: "back.out(1.7)",
+        }
+      );
     },
   });
 
@@ -628,12 +693,19 @@ function initFooterAnimations() {
     start: "top 90%",
     once: true,
     onEnter: () => {
-      gsap.to(".github-stats", {
-        scale: 1,
-        opacity: 1,
-        duration: 1,
-        ease: "power3.out",
-      });
+      gsap.fromTo(
+        ".github-stats",
+        {
+          scale: 0,
+          opacity: 0,
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+        }
+      );
     },
   });
 }
@@ -735,32 +807,45 @@ function initScrollAnimations() {
 // Text reveal animations
 function initTextAnimations() {
   // Split text for better animations
-  gsap.utils.toArray(".hero-title, .section-title").forEach((title) => {
-    const text = title.textContent;
-    title.innerHTML = text
-      .split("")
-      .map((char) => (char === " " ? " " : `<span class="char">${char}</span>`))
-      .join("");
-  });
+  const titleElements = gsap.utils.toArray(".hero-title, .section-title");
+  if (titleElements.length > 0) {
+    titleElements.forEach((title) => {
+      if (title && title.textContent) {
+        const text = title.textContent;
+        title.innerHTML = text
+          .split("")
+          .map((char) =>
+            char === " " ? " " : `<span class="char">${char}</span>`
+          )
+          .join("");
+      }
+    });
+  }
 
   // Animate characters
-  gsap.utils.toArray(".section-title .char").forEach((char, i) => {
-    ScrollTrigger.create({
-      trigger: char.closest(".section-title"),
-      start: "top 90%",
-      once: true,
-      onEnter: () => {
-        gsap.to(char, {
-          y: 0,
-          opacity: 1,
-          rotationX: 0,
-          duration: 0.8,
-          ease: "back.out(1.7)",
-          delay: i * 0.03,
+  const sectionTitleChars = gsap.utils.toArray(".section-title .char");
+  if (sectionTitleChars.length > 0) {
+    sectionTitleChars.forEach((char, i) => {
+      const sectionTitle = char.closest(".section-title");
+      if (sectionTitle) {
+        ScrollTrigger.create({
+          trigger: sectionTitle,
+          start: "top 90%",
+          once: true,
+          onEnter: () => {
+            gsap.to(char, {
+              y: 0,
+              opacity: 1,
+              rotationX: 0,
+              duration: 0.8,
+              ease: "back.out(1.7)",
+              delay: i * 0.03,
+            });
+          },
         });
-      },
+      }
     });
-  });
+  }
 }
 
 // Responsive animations
@@ -809,7 +894,6 @@ async function initAnimations() {
   // Basic setup
   gsap.config({ nullTargetWarn: false });
 
-  initLoadingAnimation();
   initNavbarAnimations();
   initHeroAnimations();
   initAboutAnimations();
@@ -838,7 +922,7 @@ async function initAnimations() {
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initAnimations);
 } else {
-  initAnimations();
+  await initAnimations();
 }
 
 // Handle page visibility for performance
