@@ -1,0 +1,46 @@
+/* Font Display Optimization */
+/* Override Font Awesome default font-display behavior */
+
+/* Font Awesome Brands */
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2)
+    format("woff2");
+  unicode-range: U+0-10FFFF;
+}
+
+/* Font Awesome Regular */
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-regular-400.woff2)
+    format("woff2");
+  unicode-range: U+0-10FFFF;
+}
+
+/* Font Awesome Solid */
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2)
+    format("woff2");
+  unicode-range: U+0-10FFFF;
+}
+
+/* Ensure fallback system fonts are used during font load */
+.fa,
+.fas,
+.far,
+.fab,
+.fal,
+.fad,
+.fat {
+  font-display: swap;
+}

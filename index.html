@@ -88,20 +88,24 @@
       rel="stylesheet"
     />
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-
     <!-- Stylesheet -->
+    <link rel="stylesheet" href="/styles/font-optimization.css" />
     <link rel="stylesheet" href="/styles/utils.css" />
     <link rel="stylesheet" href="/styles/styles.css" />
 
-    <!-- GSAP Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <!-- Font Awesome - loaded after our font optimization -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+    </noscript>
   </head>
   <body>
     <!--? Navigation -->
@@ -184,7 +188,7 @@
     <section class="section" id="about">
       <div class="container">
         <div class="section-header">
-          <h1 letters-fade-in-random text-split>About Me</h1>
+          <h2 letters-fade-in-random text-split>About Me</h2>
           <p letters-fade-in-random text-split class="section-subtitle">
             Get to know more about my background, experience, and what drives my
             passion for development.
@@ -197,7 +201,7 @@
               <div class="profile-photo">
                 <i class="fas fa-user"></i>
               </div>
-              <h3>Milan Mokariya</h3>
+              <p><strong>Milan Mokariya</strong></p>
               <p>Full Stack Developer</p>
             </div>
           </div>
@@ -283,7 +287,7 @@
     <section class="section" id="skills">
       <div class="container">
         <div class="section-header">
-          <h1 letters-fade-in-random text-split>Technical Skills</h1>
+          <h2 letters-fade-in-random text-split>Technical Skills</h2>
           <p letters-fade-in-random text-split class="section-subtitle">
             Here are the technologies and tools I work with to bring ideas to
             life, organized by proficiency level.
@@ -469,19 +473,19 @@
           <div class="certifications-grid">
             <div class="certification-item">
               <i class="fas fa-award"></i>
-              <h4>Arjun Award</h4>
+              <p><strong>Arjun Award</strong></p>
               <p>Skill.College</p>
               <span class="cert-date">2025</span>
             </div>
             <div class="certification-item">
               <i class="fas fa-trophy"></i>
-              <h4>Academic Excellence</h4>
+              <p><strong>Academic Excellence</strong></p>
               <p>RKU</p>
               <span class="cert-date">2024</span>
             </div>
             <div class="certification-item placeholder-cert">
               <i class="fas fa-rocket"></i>
-              <h4>More Coming Soon!</h4>
+              <p><strong>More Coming Soon!</strong></p>
               <p>Continuously upskilling</p>
             </div>
           </div>
@@ -493,7 +497,7 @@
     <section class="section devops-section" id="devops">
       <div class="container">
         <div class="section-header">
-          <h1 letters-fade-in-random text-split>DevOps & Infrastructure</h1>
+          <h2 letters-fade-in-random text-split>DevOps & Infrastructure</h2>
           <p letters-fade-in-random text-split class="section-subtitle">
             My approach to building scalable, reliable, and automated
             infrastructure
@@ -505,12 +509,13 @@
           <div class="architecture-card | grid g-4">
             <div class="card-header | g-4 flex items-center justify-center">
               <i class="fas fa-project-diagram | clr-accent fs-400"></i>
-              <h3 class="fs-300">Infrastructure Architecture</h3>
+              <h3>Infrastructure Architecture</h3>
             </div>
             <img
               src="./assets/projects/k8s_diagram.png"
               class="architecture-diagram"
               alt="architecture-diagram"
+              loading="lazy"
             />
           </div>
 
@@ -520,7 +525,7 @@
               <div class="devops-icon">
                 <i class="fab fa-docker"></i>
               </div>
-              <h3>Containerization</h3>
+              <h4>Containerization</h4>
               <ul class="devops-list">
                 <li><i class="fas fa-check"></i> Docker multi-stage builds</li>
                 <li>
@@ -544,7 +549,7 @@
               <div class="devops-icon">
                 <i class="fas fa-dharmachakra"></i>
               </div>
-              <h3>Kubernetes Orchestration</h3>
+              <h4>Kubernetes Orchestration</h4>
               <ul class="devops-list">
                 <li>
                   <i class="fas fa-check"></i> K8s cluster setup & management
@@ -568,7 +573,7 @@
               <div class="devops-icon">
                 <i class="fas fa-infinity"></i>
               </div>
-              <h3>CI/CD Pipelines</h3>
+              <h4>CI/CD Pipelines</h4>
               <ul class="devops-list">
                 <li><i class="fas fa-check"></i> GitHub Actions workflows</li>
                 <li><i class="fas fa-check"></i> Automated testing & builds</li>
@@ -590,7 +595,7 @@
               <div class="devops-icon">
                 <i class="fas fa-chart-line"></i>
               </div>
-              <h3>Monitoring & Logging</h3>
+              <h4>Monitoring & Logging</h4>
               <ul class="devops-list">
                 <li><i class="fas fa-check"></i> Centralized logging setup</li>
                 <li><i class="fas fa-check"></i> Performance monitoring</li>
@@ -649,7 +654,9 @@
                   <div class="achievement-icon">
                     <i class="fas fa-rocket"></i>
                   </div>
-                  <h4>Reduced deployment time from 30min to 10min</h4>
+                  <p>
+                    <strong>Reduced deployment time from 30min to 10min</strong>
+                  </p>
                   <p>
                     Implemented automated CI/CD pipelines with parallel builds
                   </p>
@@ -660,7 +667,7 @@
                   <div class="achievement-icon">
                     <i class="fas fa-users"></i>
                   </div>
-                  <h4>Scaled to handle 2k+ concurrent users</h4>
+                  <p><strong>Scaled to handle 3k+ concurrent users</strong></p>
                   <p>
                     Configured K8s auto-scaling and optimized resource
                     allocation
@@ -672,7 +679,9 @@
                   <div class="achievement-icon">
                     <i class="fas fa-shield-alt"></i>
                   </div>
-                  <h4>99.9% uptime with zero-downtime deployments</h4>
+                  <p>
+                    <strong>99.9% uptime with zero-downtime deployments</strong>
+                  </p>
                   <p>Implemented rolling updates and health checks</p>
                 </div>
               </div>
@@ -681,7 +690,7 @@
                   <div class="achievement-icon">
                     <i class="fas fa-dollar-sign"></i>
                   </div>
-                  <h4>Cost optimization</h4>
+                  <p><strong>Cost optimization</strong></p>
                   <p>
                     Reduced infrastructure costs through efficient resource
                     management
@@ -698,7 +707,7 @@
     <section class="section" id="projects">
       <div class="container">
         <div class="section-header">
-          <h1 letters-fade-in-random text-split>Featured Projects</h1>
+          <h2 letters-fade-in-random text-split>Featured Projects</h2>
           <p letters-fade-in-random text-split class="section-subtitle">
             Here are some of the projects I've worked on that showcase my skills
             and experience.
@@ -757,7 +766,7 @@
 
               <!-- Key Contributions -->
               <div class="project-contributions">
-                <h4>Key Contributions:</h4>
+                <p><strong>Key Contributions:</strong></p>
                 <ul>
                   <li>
                     <i class="fas fa-check-circle"></i> Architected
@@ -865,7 +874,7 @@
     <section class="section testimonials-section" id="testimonials">
       <div class="container">
         <div class="section-header">
-          <h1 letters-fade-in-random text-split>Testimonials</h1>
+          <h2 letters-fade-in-random text-split>Testimonials</h2>
           <p letters-fade-in-random text-split class="section-subtitle">
             What colleagues and clients say about working with me
           </p>
@@ -887,7 +896,7 @@
                 <i class="fas fa-user"></i>
               </div>
               <div class="author-info">
-                <h4>Krish Malaviya</h4>
+                <p><strong>Krish Malaviya</strong></p>
                 <p>Backend Developer at Skill.College</p>
               </div>
             </div>
@@ -1035,7 +1044,7 @@
     <section class="section roadmap-section" id="roadmap">
       <div class="container">
         <div class="section-header">
-          <h1 letters-fade-in-random text-split>What's Next</h1>
+          <h2 letters-fade-in-random text-split>What's Next</h2>
           <p letters-fade-in-random text-split class="section-subtitle">
             My learning roadmap and upcoming technical goals
           </p>
@@ -1051,7 +1060,7 @@
               <div class="roadmap-item">
                 <span class="item-icon"><i class="fas fa-code"></i></span>
                 <div class="item-content">
-                  <h4>Advanced FastAPI</h4>
+                  <p><strong>Advanced FastAPI</strong></p>
                   <p>
                     Enhancing skills in building high-performance APIs with
                     FastAPI
@@ -1065,7 +1074,7 @@
               <div class="roadmap-item">
                 <span class="item-icon"><i class="fas fa-database"></i></span>
                 <div class="item-content">
-                  <h4>Advanced SQL & Database Optimization</h4>
+                  <p><strong>Advanced SQL & Database Optimization</strong></p>
                   <p>
                     Deep dive into query optimization, indexing strategies, and
                     performance tuning
@@ -1088,7 +1097,7 @@
               <div class="roadmap-item">
                 <span class="item-icon"><i class="fas fa-cloud"></i></span>
                 <div class="item-content">
-                  <h4>Cloud Engineering</h4>
+                  <p><strong>Cloud Engineering</strong></p>
                   <p>
                     Gaining expertise in AWS/GCP services and cloud architecture
                   </p>
@@ -1097,14 +1106,14 @@
               <div class="roadmap-item">
                 <span class="item-icon"><i class="fas fa-cogs"></i></span>
                 <div class="item-content">
-                  <h4>Block Chain Development</h4>
+                  <p><strong>Block Chain Development</strong></p>
                   <p>Building decentralized applications and smart contracts</p>
                 </div>
               </div>
               <div class="roadmap-item">
                 <span class="item-icon"><i class="fas fa-shield-alt"></i></span>
                 <div class="item-content">
-                  <h4>Security Best Practices & DevSecOps</h4>
+                  <p><strong>Security Best Practices & DevSecOps</strong></p>
                   <p>
                     Integrating security into CI/CD pipelines and application
                     development
@@ -1219,28 +1228,39 @@
               href="https://github.com/MokariyaMilanDev"
               target="_blank"
               class="social-link"
+              aria-label="Visit Milan Mokariya's GitHub profile"
             >
-              <i class="fab fa-github"></i>
+              <i class="fab fa-github" aria-hidden="true"></i>
             </a>
             <a
               href="https://www.linkedin.com/in/mokariya-milan-dev"
               target="_blank"
               class="social-link"
+              aria-label="Connect with Milan Mokariya on LinkedIn"
             >
-              <i class="fab fa-linkedin"></i>
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
             </a>
-            <a href="mailto:mokariyamilan.dev@gmail.com" class="social-link">
-              <i class="fas fa-envelope"></i>
+            <a
+              href="mailto:mokariyamilan.dev@gmail.com"
+              class="social-link"
+              aria-label="Send email to Milan Mokariya"
+            >
+              <i class="fas fa-envelope" aria-hidden="true"></i>
             </a>
           </div>
 
           <div class="github-stats">
-            <img
-              src="https://github-readme-stats.vercel.app/api/top-langs/?username=MokariyaMilanDev&layout=compact&theme=dark&bg_color=1f2937&text_color=ffffff&title_color=3b82f6&border_color=374151"
-              alt="GitHub Stats"
-              style="max-width: 100%; height: auto; border-radius: 0.5rem"
-              loading="lazy"
-            />
+            <a
+              href="https://github.com/MokariyaMilanDev"
+              target="_blank"
+              aria-label="View Milan Mokariya's most used programming languages on GitHub"
+            >
+              <img
+                src="https://github-readme-stats.vercel.app/api/top-langs/?username=MokariyaMilanDev&layout=compact&theme=dark&bg_color=1f2937&text_color=ffffff&title_color=3b82f6&border_color=374151"
+                alt="GitHub top languages statistics showing Milan Mokariya's most used programming languages"
+                loading="lazy"
+              />
+            </a>
           </div>
 
           <p class="copyright">
@@ -1251,9 +1271,41 @@
       </div>
     </footer>
 
-    <script src="./js/theme-toggle.js"></script>
-    <script src="./js/cursor.js" type="module"></script>
-    <script src="./js/gsap-init.js" type="module"></script>
-    <script src="./js/gsap-animations.js" type="module"></script>
+    <!-- Critical JavaScript - Theme Toggle (inline to prevent FOUC) -->
+    <script>
+      (function () {
+        const THEME_KEY = "portfolio-theme";
+        const savedTheme =
+          localStorage.getItem(THEME_KEY) ||
+          (window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      })();
+    </script>
+
+    <!-- GSAP Library - Deferred loading with async -->
+    <script
+      defer
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+    ></script>
+    <script
+      defer
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+    ></script>
+    <script
+      defer
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"
+    ></script>
+
+    <!-- Application Scripts - Deferred and optimized loading -->
+    <script defer src="./js/theme-toggle.js"></script>
+    <script defer src="./js/lazy-loader.js"></script>
+    <script defer src="./js/gsap-init.js" type="module"></script>
+    <script defer src="./js/gsap-animations.js" type="module"></script>
   </body>
 </html>
