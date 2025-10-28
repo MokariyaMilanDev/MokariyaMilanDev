@@ -782,28 +782,6 @@ function initCursorAnimations() {
   });
 }
 
-// Scroll animations
-function initScrollAnimations() {
-  // Smooth scroll for navigation
-  gsap.utils.toArray('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-
-      if (target) {
-        gsap.to(window, {
-          duration: 1.5,
-          scrollTo: {
-            y: target,
-            offsetY: 80,
-          },
-          ease: "power3.inOut",
-        });
-      }
-    });
-  });
-}
-
 // Text reveal animations
 function initTextAnimations() {
   // Split text for better animations
@@ -906,7 +884,6 @@ async function initAnimations() {
   initProjectsAnimations();
   initFooterAnimations();
   initCursorAnimations();
-  initScrollAnimations();
   initTextAnimations();
   contactAnimations();
 
