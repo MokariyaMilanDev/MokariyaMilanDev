@@ -3,24 +3,22 @@
   "use strict";
 
   // Check if device is mobile
-  function isMobile() {
-    return (
-      window.innerWidth < 768 ||
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      )
-    );
-  }
+  // function isMobile() {
+  //   return (
+  //     window.innerWidth < 768 ||
+  //     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+  //       navigator.userAgent
+  //     )
+  //   );
+  // }
 
   // Load cursor animation only on desktop
   function loadCursorAnimation() {
-    if (!isMobile()) {
-      const cursorCanvas = document.getElementById("cursor-canvas");
-      if (cursorCanvas) {
-        import("./cursor.js").catch((err) => {
-          console.warn("Failed to load cursor animation:", err);
-        });
-      }
+    const cursorCanvas = document.getElementById("cursor-canvas");
+    if (cursorCanvas) {
+      import("./cursor.js").catch((err) => {
+        console.warn("Failed to load cursor animation:", err);
+      });
     }
   }
 
