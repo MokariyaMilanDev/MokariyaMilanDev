@@ -1,5 +1,7 @@
 # Portfolio .gitignore
 
+*must.md
+
 # macOS
 .DS_Store
 .AppleDouble
