@@ -4,7 +4,7 @@
   --primary-color: #050505;
   --secondary-color: #ffffff;
   --accent-color: #2563eb;
-  --mode-primary-color: var(--primary-color);
+  --mode-primary-color: hsl(from var(--primary-color) h s 5%);
   --mode-secondary-color: var(--secondary-color);
 
   /* Terminal Theme Colors */
@@ -64,7 +64,7 @@ a {
   padding: 0 1rem;
 }
 
-.button {
+/* .button {
   --color: var(--mode-primary-color);
   --bg-color: var(--mode-secondary-color);
   --br: var(--size-1);
@@ -121,10 +121,21 @@ a {
   &[data-size="xl"] {
     --size: var(--size-3) var(--size-6);
   }
-}
+} */
+
+/* .main-header {
+} */
 
 .header-logo-img {
   --size: 50px;
   width: var(--size);
   height: var(--size);
+  border: 3px solid var(--mode-primary-color);
+}
+
+.header-icon {
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+  border: 3px solid var(--mode-primary-color);
 }
