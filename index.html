@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -98,7 +98,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
     <noscript>
       <link
@@ -721,7 +721,10 @@
                 <img
                   src="./assets/projects/skillcollege.png"
                   alt="Skill.College Platform Screenshot"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
                   loading="lazy"
                 />
               </div>
@@ -808,7 +811,10 @@
                 <img
                   src="./assets/projects/saladbazaar.png"
                   alt="Salad Bazaar Website Screenshot"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
                   loading="lazy"
                 />
                 <div class="screenshot-placeholder" style="display: none">
@@ -876,7 +882,10 @@
                 <img
                   src="./assets/projects/portfolio-screenshot.png"
                   alt="Portfolio Website Screenshot"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  onerror="
+                    this.style.display = 'none';
+                    this.nextElementSibling.style.display = 'flex';
+                  "
                   loading="lazy"
                 />
                 <div class="screenshot-placeholder" style="display: none">
@@ -1343,19 +1352,22 @@
             <a
               href="https://github.com/MokariyaMilanDev"
               target="_blank"
-              aria-label="View Milan Mokariya's most used programming languages on GitHub"
+              aria-label="View Milan Mokariya's GitHub profile and statistics"
             >
               <img
-                src="https://github-readme-stats.vercel.app/api/top-langs/?username=MokariyaMilanDev&layout=compact&theme=dark&bg_color=1f2937&text_color=ffffff&title_color=3b82f6&border_color=374151"
-                alt="GitHub top languages statistics showing Milan Mokariya's most used programming languages"
-                loading="lazy"
+                src="https://github-readme-stats.vercel.app/api/top-langs/?username=MokariyaMilanDev&layout=compact&theme=dark&bg_color=1f2937&text_color=ffffff&title_color=3b82f6&border_color=374151&hide_border=true"
+                alt="Top Languages"
+                onerror="
+                  this.style.display = 'none';
+                  this.parentElement.innerHTML =
+                    '<span style=\'color: var(--text-secondary, #9ca3af); font-size: 0.875rem; display: inline-flex; align-items: center; gap: 0.5rem;\'><i class=\'fab fa-github\'></i> Visit My GitHub Profile</span>';
+                "
               />
             </a>
           </div>
 
           <p class="copyright">
-            © 2025 Milan Mokariya. All rights reserved. Made with ❤️ and lots of
-            ☕
+            © 2025 Milan Mokariya. All rights reserved. Made with ❤️
           </p>
         </div>
       </div>
