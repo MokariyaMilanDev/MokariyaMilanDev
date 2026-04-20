@@ -1,6 +1,6 @@
 # 👨‍💻 Milan Mokariya | Full Stack Developer & DevOps Engineer
 
-Welcome to my portfolio repository! I'm Milan, a passionate Full Stack Developer & DevOps Engineer with 1+ years of experience building scalable web applications and managing robust infrastructure.
+🚀 Full-Stack Developer | 🌐 Building scalable web experiences end-to-end |💡 From intuitive frontend interfaces to robust backend systems | 🎨 Skilled in HTML, CSS, JavaScript, React & modern UI development | ⚙️ Backend development with focus on performance & clean architecture | ☁️ Exploring DevOps — deployment, CI/CD, and cloud infrastructure | 📈 Continuously learning, building, and improving real-world systems | 💻 Turning ideas into reliable, production-ready applications
 
 ## 🔗 Links
 
