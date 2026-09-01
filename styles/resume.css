@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+:root {
+  --border_radius: 0.8rem;
+}
+
+body {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 4rem;
+  font-size: 14px;
+}
+
+main {
+  gap: 1rem;
+  display: grid;
+  padding: 1px;
+  grid-template-columns: minmax(100px, 220px) 1fr;
+  grid-template-rows: auto 1fr;
+
+  width: 100%;
+  max-width: 700px;
+  height: 95vh;
+
+  background: black;
+}
+
+.header {
+  padding: 1rem;
+  background: white;
+  border-radius: var(--border_radius);
+  border-top-left-radius: 0;
+  text-align: center;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.section {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.section-header {
+  border-bottom: 2px solid black;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.1rem 0.4rem;
+}
+
+.left {
+  gap: 1rem;
+  display: grid;
+  align-content: flex-start;
+  padding: 1rem;
+  background-color: white;
+  border-radius: var(--border_radius);
+  border-bottom-left-radius: 0;
+}
+
+.right {
+  gap: 1rem;
+  display: grid;
+  align-content: flex-start;
+  grid-row: span 2;
+  background-color: white;
+  padding: 1rem;
+  border-radius: var(--border_radius);
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.about-me {
+  padding: 0.4rem;
+  font-weight: 500;
+  font-size: small;
+  text-indent: 20px;
+}
+
+.skills {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1rem 0.5rem;
+  border-radius: 0.4rem;
+  background-color: black;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  img {
+    height: 28px;
+    aspect-ratio: 1 / 1;
+    border-radius: 0.4rem;
+    padding: 0.3rem;
+    background-color: black;
+  }
+}
