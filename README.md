@@ -1,4 +1,4 @@
-# 👨‍💻 Milan Mokariya | Full Stack Developer & DevOps Engineer
+# 👨‍💻 Milan Mokariya | Full Stack & DevOps Engineer
 
 🚀 Full-Stack Developer | 🌐 Building scalable web experiences end-to-end |💡 From intuitive frontend interfaces to robust backend systems | 🎨 Skilled in HTML, CSS, JavaScript, React & modern UI development | ⚙️ Backend development with focus on performance & clean architecture | ☁️ Exploring DevOps — deployment, CI/CD, and cloud infrastructure | 📈 Continuously learning, building, and improving real-world systems | 💻 Turning ideas into reliable, production-ready applications
 
@@ -14,13 +14,11 @@
 ## 🚀 Skills
 
 - **Frontend**:
-
   - HTML5, CSS3, JavaScript, React.js, Next.js
   - Responsive Web Design
   - State Management (Redux, React Context)
 
 - **Backend**:
-
   - Express.js, Node.js
   - RESTful APIs
   - Authentication & Authorization (JWT, OAuth)
@@ -28,18 +26,15 @@
   - Microservice Architecture
 
 - **Databases**:
-
   - SQL (MySQL, PostgreSQL)
   - NoSQL (MongoDB)
 
 - **Devops**:
-
   - Docker
   - Kubenets(K8s)
   - HELM
 
 - **Version Control**:
-
   - Git, GitHub
 
 - **Tools & Others**:
